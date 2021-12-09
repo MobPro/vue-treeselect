@@ -4746,6 +4746,7 @@ var directionMap = {
       // this.adjustMenuOpenDirection();
       // this.setupMenuSizeWatcher();
       // this.setupMenuResizeAndScrollEventListeners();
+      return true;
     },
     onMenuClose: function onMenuClose() {
       this.removeMenuSizeWatcher();
