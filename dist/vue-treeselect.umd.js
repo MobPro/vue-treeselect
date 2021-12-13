@@ -2126,7 +2126,10 @@ var instanceId = 0;
     internalValue: function internalValue(newValue, oldValue) {
       var hasChanged = quickDiff(newValue, oldValue);
       if (hasChanged) this.$emit('input', this.getValue(), this.getInstanceId());
-      if (hasChanged) this.oldInternalValue = oldValue;
+      this.oldInternalValue = oldValue;
+      if (!this.menu.isOpen && hasChanged) {
+        this.$emit('close', this.getValue(), this.getInstanceId());
+      }
     },
     matchKeys: function matchKeys() {
       this.initialize();
