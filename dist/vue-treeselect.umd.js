@@ -2022,7 +2022,8 @@ var instanceId = 0;
       },
       lastSearchInput: null,
       remoteSearch: createMap(),
-      hasBranchNodes: null
+      hasBranchNodes: null,
+      oldInternalValue: []
     };
   },
   computed: {
@@ -2125,6 +2126,7 @@ var instanceId = 0;
     internalValue: function internalValue(newValue, oldValue) {
       var hasChanged = quickDiff(newValue, oldValue);
       if (hasChanged) this.$emit('input', this.getValue(), this.getInstanceId());
+      if (hasChanged) this.oldInternalValue = oldValue;
     },
     matchKeys: function matchKeys() {
       this.initialize();
@@ -2731,7 +2733,8 @@ var instanceId = 0;
       this.menu.isOpen = false;
       this.toggleClickOutsideEvent(false);
       this.resetSearchQuery();
-      this.$emit('close', this.getValue(), this.getInstanceId());
+      var hasChanged = quickDiff(this.internalValue, this.oldInternalValue);
+      if (hasChanged) this.$emit('close', this.getValue(), this.getInstanceId());
     },
     openMenu: function openMenu() {
       if (this.disabled || this.menu.isOpen) return;
