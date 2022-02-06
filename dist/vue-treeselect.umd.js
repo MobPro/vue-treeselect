@@ -2125,6 +2125,7 @@ var instanceId = 0;
     internalValue: function internalValue(newValue, oldValue) {
       var hasChanged = quickDiff(newValue, oldValue);
       if (hasChanged) this.$emit('input', this.getValue(), this.getInstanceId());
+      if (hasChanged && !this.menu.isOpen) this.$emit('close', this.getValue(), this.getInstanceId());
     },
     matchKeys: function matchKeys() {
       this.initialize();
@@ -4139,6 +4140,7 @@ Arrow_component.options.__file = "src/components/icons/Arrow.vue"
           return handler(result);
         }, 0);
       }
+      instance.resetSearchQuery();
     }),
     handleMouseDownOnArrow: onLeftClick(function handleMouseDownOnArrow(evt) {
       evt.preventDefault();
