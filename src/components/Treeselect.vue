@@ -31,12 +31,14 @@
 
     render() {
       return (
-        <LabelShrink ref="labelShrink" v-show={this.label} />
-        <div ref="wrapper" class={this.wrapperClass}>
-          <HiddenFields />
-          <Control ref="control" />
-          {this.appendToBody ? <MenuPortal ref="portal" /> : <Menu ref="menu" />}
-        </div>
+        <>
+          <LabelShrink ref="labelShrink" v-show={this.label} />
+          <div ref="wrapper" class={this.wrapperClass}>
+            <HiddenFields />
+            <Control ref="control" />
+            {this.appendToBody ? <MenuPortal ref="portal" /> : <Menu ref="menu" />}
+          </div>
+        </>
       )
     },
   }
