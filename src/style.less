@@ -1145,3 +1145,23 @@
   overflow: visible;
   box-sizing: border-box;
 }
+
+/**
+ * LabelShrinking
+ */
+label.vue-treeselect__label-shrink {
+  position: absolute;
+  transition: all 0.2s ease;
+  pointer-events: none;
+}
+
+label.vue-treeselect__label-shrink--shrink {
+  top: -8px;
+  left: 7px;
+  font-size: 12px;
+  z-index: 1;
+  background-color: #fff;
+  line-height: 12px;
+  margin: 0;
+  padding: 0 2px;
+}
