@@ -950,6 +950,9 @@
 /**
  * LabelShrinking
  */
+.vue-treeselect__label-shrink {
+  margin-top: 0.5rem;
+}
 .vue-treeselect__label-shrink .vue-treeselect__control {
   padding: 2px 5px;
 }
@@ -960,13 +963,13 @@ label.vue-treeselect__label-shrink {
 }
 label.vue-treeselect__label-shrink--shrink {
   top: -6px;
-  left: 7px;
+  left: 5px;
   font-size: 12px;
   z-index: 1;
-  background-color: #fff;
   line-height: 12px;
   margin: 0;
-  padding: 0 2px;
+  background-color: #fff;
+  padding: 0 0.25rem;
 }
 
 
