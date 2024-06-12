@@ -4865,10 +4865,10 @@ MenuPortal_component.options.__file = "src/components/MenuPortal.vue"
     renderLabel: function renderLabel() {
       var h = this.$createElement;
       var instance = this.instance;
-      var shrinkClass = this.shouldShrink ? 'vue-treeselect__label-shrink--shrink' : '';
+      var shrinkClass = this.shouldShrink ? 'vue-treeselect--label-shrink--shrink' : '';
       var label = this.shouldShrink ? instance.label : '';
       return h("label", {
-        "class": "vue-treeselect__label-shrink ".concat(shrinkClass)
+        "class": "vue-treeselect--label-shrink ".concat(shrinkClass)
       }, [label]);
     }
   },
@@ -4927,7 +4927,7 @@ LabelShrink_component.options.__file = "src/components/LabelShrink.vue"
         'vue-treeselect--open-below': this.menu.placement === 'bottom',
         'vue-treeselect--branch-nodes-disabled': this.disableBranchNodes,
         'vue-treeselect--append-to-body': this.appendToBody,
-        'vue-treeselect__label-shrink': this.label
+        'vue-treeselect--label-shrink': this.label && (this.hasValue || this.trigger.isFocused || this.menu.isOpen)
       };
     }
   },

@@ -25,7 +25,7 @@
           'vue-treeselect--open-below': this.menu.placement === 'bottom',
           'vue-treeselect--branch-nodes-disabled': this.disableBranchNodes,
           'vue-treeselect--append-to-body': this.appendToBody,
-          'vue-treeselect__label-shrink': this.label,
+          'vue-treeselect--label-shrink': this.label && (this.hasValue || this.trigger.isFocused || this.menu.isOpen),
         }
       },
     },

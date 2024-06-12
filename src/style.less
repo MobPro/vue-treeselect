@@ -1149,21 +1149,17 @@
 /**
  * LabelShrinking
  */
- .vue-treeselect__label-shrink {
-  margin-top: 0.5rem;
-}
-
-.vue-treeselect__label-shrink .vue-treeselect__control {
+.vue-treeselect--label-shrink .vue-treeselect__control {
   padding: 2px 5px;
 }
 
-label.vue-treeselect__label-shrink {
+label.vue-treeselect--label-shrink {
   position: absolute;
   transition: all 0.2s ease;
   pointer-events: none;
 }
 
-label.vue-treeselect__label-shrink--shrink {
+label.vue-treeselect--label-shrink--shrink {
   top: -6px;
   left: 5px;
   font-size: 12px;

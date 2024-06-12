@@ -13,10 +13,10 @@
     methods: {
       renderLabel() {
         const { instance } = this
-        const shrinkClass = this.shouldShrink ? 'vue-treeselect__label-shrink--shrink' : ''
+        const shrinkClass = this.shouldShrink ? 'vue-treeselect--label-shrink--shrink' : ''
         const label = this.shouldShrink ? instance.label : ''
         return (
-                <label class={`vue-treeselect__label-shrink ${shrinkClass}`}>
+                <label class={`vue-treeselect--label-shrink ${shrinkClass}`}>
                     {label}
                 </label>
             )
