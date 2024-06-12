@@ -13,13 +13,10 @@
     methods: {
       renderLabel() {
         const { instance } = this
-        const { placeholder } = instance
         const shrinkClass = this.shouldShrink ? 'vue-treeselect__label-shrink--shrink' : ''
-        const shrinkStyle = this.shouldShrink ? `padding-left: ${instance.triggerWidth}px;` : ''
-        const shrinkText = this.shouldShrink ? instance.getPlaceholder() : ''
-        const label = instance.selectedNodesStates.length ? shrinkText : placeholder
+        const label = this.shouldShrink ? instance.label : ''
         return (
-                <label class={`vue-treeselect__label-shrink ${shrinkClass}`} style={shrinkStyle}>
+                <label class={`vue-treeselect__label-shrink ${shrinkClass}`}>
                     {label}
                 </label>
             )
@@ -28,7 +25,7 @@
 
     render() {
       return (
-        <div class="vue-treeselect__label-container">
+        <div>
             {this.renderLabel()}
         </div>
       )

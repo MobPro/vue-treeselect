@@ -2915,9 +2915,6 @@ var Tip_component = normalizeComponent(
   
 )
 
-/* hot reload */
-if (false) { var Tip_api; }
-Tip_component.options.__file = "src/components/Tip.vue"
 /* harmony default export */ var Tip = (Tip_component.exports);
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader/lib??vue-loader-options!./src/components/Option.vue?vue&type=script&lang=js
 
@@ -3195,9 +3192,6 @@ var Option_component = normalizeComponent(
   
 )
 
-/* hot reload */
-if (false) { var Option_api; }
-Option_component.options.__file = "src/components/Option.vue"
 /* harmony default export */ var components_Option = (Option_component.exports);
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader/lib??vue-loader-options!./src/components/Menu.vue?vue&type=script&lang=js
 
@@ -3698,22 +3692,16 @@ MenuPortal_component.options.__file = "src/components/MenuPortal.vue"
     renderLabel: function renderLabel() {
       var h = this.$createElement;
       var instance = this.instance;
-      var placeholder = instance.placeholder;
       var shrinkClass = this.shouldShrink ? 'vue-treeselect__label-shrink--shrink' : '';
-      var shrinkStyle = this.shouldShrink ? "padding-left: ".concat(instance.triggerWidth, "px;") : '';
-      var shrinkText = this.shouldShrink ? instance.getPlaceholder() : '';
-      var label = instance.selectedNodesStates.length ? shrinkText : placeholder;
+      var label = this.shouldShrink ? instance.label : '';
       return h("label", {
-        "class": "vue-treeselect__label-shrink ".concat(shrinkClass),
-        style: shrinkStyle
+        "class": "vue-treeselect__label-shrink ".concat(shrinkClass)
       }, [label]);
     }
   },
   render: function render() {
     var h = arguments[0];
-    return h("div", {
-      "class": "vue-treeselect__label-container"
-    }, [this.renderLabel()]);
+    return h("div", [this.renderLabel()]);
   }
 });
 // CONCATENATED MODULE: ./src/components/LabelShrink.vue?vue&type=script&lang=js
@@ -3765,24 +3753,25 @@ LabelShrink_component.options.__file = "src/components/LabelShrink.vue"
         'vue-treeselect--open-above': this.menu.placement === 'top',
         'vue-treeselect--open-below': this.menu.placement === 'bottom',
         'vue-treeselect--branch-nodes-disabled': this.disableBranchNodes,
-        'vue-treeselect--append-to-body': this.appendToBody
+        'vue-treeselect--append-to-body': this.appendToBody,
+        'vue-treeselect__label-shrink': this.label
       };
     }
   },
   render: function render() {
     var h = arguments[0];
-    return h("div", [h(LabelShrink, {
-      ref: "label-shrink"
-    }), h("div", {
+    return h("div", {
       ref: "wrapper",
       "class": this.wrapperClass
-    }, [h(HiddenFields), h(Control, {
+    }, [h(LabelShrink, {
+      ref: "label-shrink"
+    }), h(HiddenFields), h(Control, {
       ref: "control"
     }), this.appendToBody ? h(MenuPortal, {
       ref: "portal"
     }) : h(Menu, {
       ref: "menu"
-    })])]);
+    })]);
   }
 });
 // CONCATENATED MODULE: ./src/components/Treeselect.vue?vue&type=script&lang=js

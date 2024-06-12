@@ -950,13 +950,16 @@
 /**
  * LabelShrinking
  */
+.vue-treeselect__label-shrink .vue-treeselect__control {
+  padding: 2px 5px;
+}
 label.vue-treeselect__label-shrink {
   position: absolute;
   transition: all 0.2s ease;
   pointer-events: none;
 }
 label.vue-treeselect__label-shrink--shrink {
-  top: -8px;
+  top: -6px;
   left: 7px;
   font-size: 12px;
   z-index: 1;

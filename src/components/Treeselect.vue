@@ -25,19 +25,18 @@
           'vue-treeselect--open-below': this.menu.placement === 'bottom',
           'vue-treeselect--branch-nodes-disabled': this.disableBranchNodes,
           'vue-treeselect--append-to-body': this.appendToBody,
+          'vue-treeselect__label-shrink': this.label,
         }
       },
     },
 
     render() {
       return (
-        <div>
+        <div ref="wrapper" class={this.wrapperClass}>
           <LabelShrink ref="label-shrink" />
-          <div ref="wrapper" class={this.wrapperClass}>
-            <HiddenFields />
-            <Control ref="control" />
-            {this.appendToBody ? <MenuPortal ref="portal" /> : <Menu ref="menu" />}
-          </div>
+          <HiddenFields />
+          <Control ref="control" />
+          {this.appendToBody ? <MenuPortal ref="portal" /> : <Menu ref="menu" />}
         </div>
       )
     },
