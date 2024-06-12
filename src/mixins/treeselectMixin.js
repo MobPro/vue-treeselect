@@ -333,6 +333,11 @@ export default {
       default: false,
     },
 
+    label: {
+      type: String,
+      default: null,
+    },
+
     /**
      * Limit the display of selected options.
      * The rest will be hidden within the limitText string.

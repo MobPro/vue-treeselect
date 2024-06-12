@@ -4,6 +4,7 @@
   import Control from './Control'
   import Menu from './Menu'
   import MenuPortal from './MenuPortal'
+  import LabelShrink from './LabelShrink'
 
   export default {
     name: 'vue-treeselect',
@@ -30,6 +31,7 @@
 
     render() {
       return (
+        <LabelShrink ref="labelShrink" v-show={this.label} />
         <div ref="wrapper" class={this.wrapperClass}>
           <HiddenFields />
           <Control ref="control" />
