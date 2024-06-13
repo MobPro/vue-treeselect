@@ -14,7 +14,7 @@
 <script>
   export default {
     data: () => ({
-      value: [],
+      value: [ 'fruits' ],
       options: [ {
         id: 'fruits',
         label: 'Fruits',

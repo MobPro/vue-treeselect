@@ -4867,6 +4867,7 @@ MenuPortal_component.options.__file = "src/components/MenuPortal.vue"
       var instance = this.instance;
       var shrinkClass = this.shouldShrink ? 'vue-treeselect--label-shrink--shrink' : '';
       var label = this.shouldShrink ? instance.label : '';
+      if (!label) return null;
       return h("label", {
         "class": "vue-treeselect--label-shrink ".concat(shrinkClass)
       }, [label]);

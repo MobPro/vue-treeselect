@@ -15,6 +15,7 @@
         const { instance } = this
         const shrinkClass = this.shouldShrink ? 'vue-treeselect--label-shrink--shrink' : ''
         const label = this.shouldShrink ? instance.label : ''
+        if (!label) return null
         return (
                 <label class={`vue-treeselect--label-shrink ${shrinkClass}`}>
                     {label}
