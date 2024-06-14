@@ -2128,6 +2128,7 @@ var instanceId = 0;
     internalValue: function internalValue(newValue, oldValue) {
       var hasChanged = quickDiff(newValue, oldValue);
       if (hasChanged) this.$emit('input', this.getValue(), this.getInstanceId());
+      if (hasChanged && !this.menu.isOpen) this.$emit('close', this.getValue(), this.getInstanceId());
     },
     matchKeys: function matchKeys() {
       this.initialize();
@@ -3984,6 +3985,7 @@ Arrow_component.options.__file = "src/components/icons/Arrow.vue"
           return handler(result);
         }, 0);
       }
+      instance.resetSearchQuery();
     }),
     handleMouseDownOnArrow: onLeftClick(function handleMouseDownOnArrow(evt) {
       evt.preventDefault();
@@ -4369,14 +4371,6 @@ var Option_component = normalizeComponent(
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader/lib??vue-loader-options!./src/components/Menu.vue?vue&type=script&lang=js
 
 
-
-
-var directionMap = {
-  top: 'top',
-  bottom: 'bottom',
-  above: 'top',
-  below: 'bottom'
-};
 /* harmony default export */ var Menuvue_type_script_lang_js = ({
   name: 'vue-treeselect--menu',
   inject: ['instance'],
@@ -4573,53 +4567,11 @@ var directionMap = {
       }, [instance.noResultsText]);
     },
     onMenuOpen: function onMenuOpen() {
-      this.adjustMenuOpenDirection();
-      this.setupMenuSizeWatcher();
-      this.setupMenuResizeAndScrollEventListeners();
+      return true;
     },
     onMenuClose: function onMenuClose() {
       this.removeMenuSizeWatcher();
       this.removeMenuResizeAndScrollEventListeners();
-    },
-    adjustMenuOpenDirection: function adjustMenuOpenDirection() {
-      var instance = this.instance;
-      if (!instance.menu.isOpen) return;
-      var $menu = instance.getMenu();
-      var $control = instance.getControl();
-      var menuRect = $menu.getBoundingClientRect();
-      var controlRect = $control.getBoundingClientRect();
-      var menuHeight = menuRect.height;
-      var viewportHeight = window.innerHeight;
-      var spaceAbove = controlRect.top;
-      var spaceBelow = window.innerHeight - controlRect.bottom;
-      var isControlInViewport = controlRect.top >= 0 && controlRect.top <= viewportHeight || controlRect.top < 0 && controlRect.bottom > 0;
-      var hasEnoughSpaceBelow = spaceBelow > menuHeight + MENU_BUFFER;
-      var hasEnoughSpaceAbove = spaceAbove > menuHeight + MENU_BUFFER;
-      if (!isControlInViewport) {
-        instance.closeMenu();
-      } else if (instance.openDirection !== 'auto') {
-        instance.menu.placement = directionMap[instance.openDirection];
-      } else if (hasEnoughSpaceBelow || !hasEnoughSpaceAbove) {
-        instance.menu.placement = 'bottom';
-      } else {
-        instance.menu.placement = 'top';
-      }
-    },
-    setupMenuSizeWatcher: function setupMenuSizeWatcher() {
-      var instance = this.instance;
-      var $menu = instance.getMenu();
-      if (this.menuSizeWatcher) return;
-      this.menuSizeWatcher = {
-        remove: watchSize($menu, this.adjustMenuOpenDirection)
-      };
-    },
-    setupMenuResizeAndScrollEventListeners: function setupMenuResizeAndScrollEventListeners() {
-      var instance = this.instance;
-      var $control = instance.getControl();
-      if (this.menuResizeAndScrollEventListeners) return;
-      this.menuResizeAndScrollEventListeners = {
-        remove: setupResizeAndScrollEventListeners($control, this.adjustMenuOpenDirection)
-      };
     },
     removeMenuSizeWatcher: function removeMenuSizeWatcher() {
       if (!this.menuSizeWatcher) return;
