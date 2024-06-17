@@ -186,6 +186,11 @@
         defaultValue: code('false'),
         description: `Joins multiple values into a single form field with the ${code('delimiter')} (legacy mode).`,
       }, {
+        name: 'label',
+        type: 'String',
+        defaultValue: code(''),
+        description: `Set the label that will be shown as shrunken value when a value is selected.`,
+      }, {
         name: 'limit',
         type: 'Number',
         defaultValue: code('Infinity'),

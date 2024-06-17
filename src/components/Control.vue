@@ -114,6 +114,7 @@
           // Instead of:
           //   setTimeout(fn, delay, ...args)
         }
+        instance.resetSearchQuery()
       }),
 
       handleMouseDownOnArrow: onLeftClick(function handleMouseDownOnArrow(evt) {

@@ -333,6 +333,11 @@ export default {
       default: false,
     },
 
+    label: {
+      type: String,
+      default: null,
+    },
+
     /**
      * Limit the display of selected options.
      * The rest will be hidden within the limitText string.
@@ -863,6 +868,7 @@ export default {
       // Vue would trigger this watcher when `newValue` and `oldValue` are shallow-equal.
       // We emit the `input` event only when the value actually changes.
       if (hasChanged) this.$emit('input', this.getValue(), this.getInstanceId())
+      if (hasChanged && !this.menu.isOpen) this.$emit('close', this.getValue(), this.getInstanceId())
     },
 
     matchKeys() {

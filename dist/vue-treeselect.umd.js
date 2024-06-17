@@ -1,5 +1,5 @@
 /*!
- * vue-treeselect v0.4.0 | (c) 2017-2021 Riophae Lee
+ * vue-treeselect v0.4.0 | (c) 2017-2024 Riophae Lee
  * Released under the MIT License.
  * https://vue-treeselect.js.org/
  */
@@ -12,7 +12,7 @@
 		exports["VueTreeselect"] = factory(require("Vue"));
 	else
 		root["VueTreeselect"] = factory(root["Vue"]);
-})(window, function(__WEBPACK_EXTERNAL_MODULE__36__) {
+})(window, function(__WEBPACK_EXTERNAL_MODULE__40__) {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -96,7 +96,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 38);
+/******/ 	return __webpack_require__(__webpack_require__.s = 42);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -104,94 +104,80 @@ return /******/ (function(modules) { // webpackBootstrap
 /***/ (function(module, exports, __webpack_require__) {
 
 var arrayWithHoles = __webpack_require__(1);
-
 var iterableToArrayLimit = __webpack_require__(2);
-
 var unsupportedIterableToArray = __webpack_require__(3);
-
 var nonIterableRest = __webpack_require__(5);
-
-function _slicedToArray(arr, i) {
-  return arrayWithHoles(arr) || iterableToArrayLimit(arr, i) || unsupportedIterableToArray(arr, i) || nonIterableRest();
+function _slicedToArray(r, e) {
+  return arrayWithHoles(r) || iterableToArrayLimit(r, e) || unsupportedIterableToArray(r, e) || nonIterableRest();
 }
-
-module.exports = _slicedToArray;
+module.exports = _slicedToArray, module.exports.__esModule = true, module.exports["default"] = module.exports;
 
 /***/ }),
 /* 1 */
 /***/ (function(module, exports) {
 
-function _arrayWithHoles(arr) {
-  if (Array.isArray(arr)) return arr;
+function _arrayWithHoles(r) {
+  if (Array.isArray(r)) return r;
 }
-
-module.exports = _arrayWithHoles;
+module.exports = _arrayWithHoles, module.exports.__esModule = true, module.exports["default"] = module.exports;
 
 /***/ }),
 /* 2 */
 /***/ (function(module, exports) {
 
-function _iterableToArrayLimit(arr, i) {
-  if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return;
-  var _arr = [];
-  var _n = true;
-  var _d = false;
-  var _e = undefined;
-
-  try {
-    for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {
-      _arr.push(_s.value);
-
-      if (i && _arr.length === i) break;
-    }
-  } catch (err) {
-    _d = true;
-    _e = err;
-  } finally {
+function _iterableToArrayLimit(r, l) {
+  var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"];
+  if (null != t) {
+    var e,
+      n,
+      i,
+      u,
+      a = [],
+      f = !0,
+      o = !1;
     try {
-      if (!_n && _i["return"] != null) _i["return"]();
+      if (i = (t = t.call(r)).next, 0 === l) {
+        if (Object(t) !== t) return;
+        f = !1;
+      } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0);
+    } catch (r) {
+      o = !0, n = r;
     } finally {
-      if (_d) throw _e;
+      try {
+        if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return;
+      } finally {
+        if (o) throw n;
+      }
     }
+    return a;
   }
-
-  return _arr;
 }
-
-module.exports = _iterableToArrayLimit;
+module.exports = _iterableToArrayLimit, module.exports.__esModule = true, module.exports["default"] = module.exports;
 
 /***/ }),
 /* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var arrayLikeToArray = __webpack_require__(4);
-
-function _unsupportedIterableToArray(o, minLen) {
-  if (!o) return;
-  if (typeof o === "string") return arrayLikeToArray(o, minLen);
-  var n = Object.prototype.toString.call(o).slice(8, -1);
-  if (n === "Object" && o.constructor) n = o.constructor.name;
-  if (n === "Map" || n === "Set") return Array.from(o);
-  if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return arrayLikeToArray(o, minLen);
+function _unsupportedIterableToArray(r, a) {
+  if (r) {
+    if ("string" == typeof r) return arrayLikeToArray(r, a);
+    var t = {}.toString.call(r).slice(8, -1);
+    return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? arrayLikeToArray(r, a) : void 0;
+  }
 }
-
-module.exports = _unsupportedIterableToArray;
+module.exports = _unsupportedIterableToArray, module.exports.__esModule = true, module.exports["default"] = module.exports;
 
 /***/ }),
 /* 4 */
 /***/ (function(module, exports) {
 
-function _arrayLikeToArray(arr, len) {
-  if (len == null || len > arr.length) len = arr.length;
-
-  for (var i = 0, arr2 = new Array(len); i < len; i++) {
-    arr2[i] = arr[i];
-  }
-
-  return arr2;
+function _arrayLikeToArray(r, a) {
+  (null == a || a > r.length) && (a = r.length);
+  for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e];
+  return n;
 }
-
-module.exports = _arrayLikeToArray;
+module.exports = _arrayLikeToArray, module.exports.__esModule = true, module.exports["default"] = module.exports;
 
 /***/ }),
 /* 5 */
@@ -200,48 +186,39 @@ module.exports = _arrayLikeToArray;
 function _nonIterableRest() {
   throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
 }
-
-module.exports = _nonIterableRest;
+module.exports = _nonIterableRest, module.exports.__esModule = true, module.exports["default"] = module.exports;
 
 /***/ }),
 /* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var arrayWithoutHoles = __webpack_require__(7);
-
 var iterableToArray = __webpack_require__(8);
-
 var unsupportedIterableToArray = __webpack_require__(3);
-
 var nonIterableSpread = __webpack_require__(9);
-
-function _toConsumableArray(arr) {
-  return arrayWithoutHoles(arr) || iterableToArray(arr) || unsupportedIterableToArray(arr) || nonIterableSpread();
+function _toConsumableArray(r) {
+  return arrayWithoutHoles(r) || iterableToArray(r) || unsupportedIterableToArray(r) || nonIterableSpread();
 }
-
-module.exports = _toConsumableArray;
+module.exports = _toConsumableArray, module.exports.__esModule = true, module.exports["default"] = module.exports;
 
 /***/ }),
 /* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var arrayLikeToArray = __webpack_require__(4);
-
-function _arrayWithoutHoles(arr) {
-  if (Array.isArray(arr)) return arrayLikeToArray(arr);
+function _arrayWithoutHoles(r) {
+  if (Array.isArray(r)) return arrayLikeToArray(r);
 }
-
-module.exports = _arrayWithoutHoles;
+module.exports = _arrayWithoutHoles, module.exports.__esModule = true, module.exports["default"] = module.exports;
 
 /***/ }),
 /* 8 */
 /***/ (function(module, exports) {
 
-function _iterableToArray(iter) {
-  if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter);
+function _iterableToArray(r) {
+  if ("undefined" != typeof Symbol && null != r[Symbol.iterator] || null != r["@@iterator"]) return Array.from(r);
 }
-
-module.exports = _iterableToArray;
+module.exports = _iterableToArray, module.exports.__esModule = true, module.exports["default"] = module.exports;
 
 /***/ }),
 /* 9 */
@@ -250,32 +227,69 @@ module.exports = _iterableToArray;
 function _nonIterableSpread() {
   throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
 }
-
-module.exports = _nonIterableSpread;
+module.exports = _nonIterableSpread, module.exports.__esModule = true, module.exports["default"] = module.exports;
 
 /***/ }),
 /* 10 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-function _defineProperty(obj, key, value) {
-  if (key in obj) {
-    Object.defineProperty(obj, key, {
-      value: value,
-      enumerable: true,
-      configurable: true,
-      writable: true
-    });
-  } else {
-    obj[key] = value;
-  }
-
-  return obj;
+var toPropertyKey = __webpack_require__(11);
+function _defineProperty(e, r, t) {
+  return (r = toPropertyKey(r)) in e ? Object.defineProperty(e, r, {
+    value: t,
+    enumerable: !0,
+    configurable: !0,
+    writable: !0
+  }) : e[r] = t, e;
 }
-
-module.exports = _defineProperty;
+module.exports = _defineProperty, module.exports.__esModule = true, module.exports["default"] = module.exports;
 
 /***/ }),
 /* 11 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var _typeof = __webpack_require__(12)["default"];
+var toPrimitive = __webpack_require__(13);
+function toPropertyKey(t) {
+  var i = toPrimitive(t, "string");
+  return "symbol" == _typeof(i) ? i : i + "";
+}
+module.exports = toPropertyKey, module.exports.__esModule = true, module.exports["default"] = module.exports;
+
+/***/ }),
+/* 12 */
+/***/ (function(module, exports) {
+
+function _typeof(o) {
+  "@babel/helpers - typeof";
+
+  return (module.exports = _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) {
+    return typeof o;
+  } : function (o) {
+    return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o;
+  }, module.exports.__esModule = true, module.exports["default"] = module.exports), _typeof(o);
+}
+module.exports = _typeof, module.exports.__esModule = true, module.exports["default"] = module.exports;
+
+/***/ }),
+/* 13 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var _typeof = __webpack_require__(12)["default"];
+function toPrimitive(t, r) {
+  if ("object" != _typeof(t) || !t) return t;
+  var e = t[Symbol.toPrimitive];
+  if (void 0 !== e) {
+    var i = e.call(t, r || "default");
+    if ("object" != _typeof(i)) return i;
+    throw new TypeError("@@toPrimitive must return a primitive value.");
+  }
+  return ("string" === r ? String : Number)(t);
+}
+module.exports = toPrimitive, module.exports.__esModule = true, module.exports["default"] = module.exports;
+
+/***/ }),
+/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -306,7 +320,7 @@ module.exports = fuzzysearch;
 
 
 /***/ }),
-/* 12 */
+/* 15 */
 /***/ (function(module, exports) {
 
 /**
@@ -329,12 +343,12 @@ module.exports = noop;
 
 
 /***/ }),
-/* 13 */
+/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var isObject = __webpack_require__(14),
-    now = __webpack_require__(15),
-    toNumber = __webpack_require__(19);
+var isObject = __webpack_require__(17),
+    now = __webpack_require__(18),
+    toNumber = __webpack_require__(22);
 
 /** Error message constants. */
 var FUNC_ERROR_TEXT = 'Expected a function';
@@ -526,7 +540,7 @@ module.exports = debounce;
 
 
 /***/ }),
-/* 14 */
+/* 17 */
 /***/ (function(module, exports) {
 
 /**
@@ -563,10 +577,10 @@ module.exports = isObject;
 
 
 /***/ }),
-/* 15 */
+/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var root = __webpack_require__(16);
+var root = __webpack_require__(19);
 
 /**
  * Gets the timestamp of the number of milliseconds that have elapsed since
@@ -592,10 +606,10 @@ module.exports = now;
 
 
 /***/ }),
-/* 16 */
+/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var freeGlobal = __webpack_require__(17);
+var freeGlobal = __webpack_require__(20);
 
 /** Detect free variable `self`. */
 var freeSelf = typeof self == 'object' && self && self.Object === Object && self;
@@ -607,7 +621,7 @@ module.exports = root;
 
 
 /***/ }),
-/* 17 */
+/* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {/** Detect free variable `global` from Node.js. */
@@ -615,10 +629,10 @@ var freeGlobal = typeof global == 'object' && global && global.Object === Object
 
 module.exports = freeGlobal;
 
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(18)))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(21)))
 
 /***/ }),
-/* 18 */
+/* 21 */
 /***/ (function(module, exports) {
 
 var g;
@@ -644,17 +658,15 @@ module.exports = g;
 
 
 /***/ }),
-/* 19 */
+/* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var isObject = __webpack_require__(14),
-    isSymbol = __webpack_require__(20);
+var baseTrim = __webpack_require__(23),
+    isObject = __webpack_require__(17),
+    isSymbol = __webpack_require__(25);
 
 /** Used as references for various `Number` constants. */
 var NAN = 0 / 0;
-
-/** Used to match leading and trailing whitespace. */
-var reTrim = /^\s+|\s+$/g;
 
 /** Used to detect bad signed hexadecimal string values. */
 var reIsBadHex = /^[-+]0x[0-9a-f]+$/i;
@@ -705,7 +717,7 @@ function toNumber(value) {
   if (typeof value != 'string') {
     return value === 0 ? value : +value;
   }
-  value = value.replace(reTrim, '');
+  value = baseTrim(value);
   var isBinary = reIsBinary.test(value);
   return (isBinary || reIsOctal.test(value))
     ? freeParseInt(value.slice(2), isBinary ? 2 : 8)
@@ -716,11 +728,61 @@ module.exports = toNumber;
 
 
 /***/ }),
-/* 20 */
+/* 23 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseGetTag = __webpack_require__(21),
-    isObjectLike = __webpack_require__(25);
+var trimmedEndIndex = __webpack_require__(24);
+
+/** Used to match leading whitespace. */
+var reTrimStart = /^\s+/;
+
+/**
+ * The base implementation of `_.trim`.
+ *
+ * @private
+ * @param {string} string The string to trim.
+ * @returns {string} Returns the trimmed string.
+ */
+function baseTrim(string) {
+  return string
+    ? string.slice(0, trimmedEndIndex(string) + 1).replace(reTrimStart, '')
+    : string;
+}
+
+module.exports = baseTrim;
+
+
+/***/ }),
+/* 24 */
+/***/ (function(module, exports) {
+
+/** Used to match a single whitespace character. */
+var reWhitespace = /\s/;
+
+/**
+ * Used by `_.trim` and `_.trimEnd` to get the index of the last non-whitespace
+ * character of `string`.
+ *
+ * @private
+ * @param {string} string The string to inspect.
+ * @returns {number} Returns the index of the last non-whitespace character.
+ */
+function trimmedEndIndex(string) {
+  var index = string.length;
+
+  while (index-- && reWhitespace.test(string.charAt(index))) {}
+  return index;
+}
+
+module.exports = trimmedEndIndex;
+
+
+/***/ }),
+/* 25 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var baseGetTag = __webpack_require__(26),
+    isObjectLike = __webpack_require__(30);
 
 /** `Object#toString` result references. */
 var symbolTag = '[object Symbol]';
@@ -751,12 +813,12 @@ module.exports = isSymbol;
 
 
 /***/ }),
-/* 21 */
+/* 26 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Symbol = __webpack_require__(22),
-    getRawTag = __webpack_require__(23),
-    objectToString = __webpack_require__(24);
+var Symbol = __webpack_require__(27),
+    getRawTag = __webpack_require__(28),
+    objectToString = __webpack_require__(29);
 
 /** `Object#toString` result references. */
 var nullTag = '[object Null]',
@@ -785,10 +847,10 @@ module.exports = baseGetTag;
 
 
 /***/ }),
-/* 22 */
+/* 27 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var root = __webpack_require__(16);
+var root = __webpack_require__(19);
 
 /** Built-in value references. */
 var Symbol = root.Symbol;
@@ -797,10 +859,10 @@ module.exports = Symbol;
 
 
 /***/ }),
-/* 23 */
+/* 28 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Symbol = __webpack_require__(22);
+var Symbol = __webpack_require__(27);
 
 /** Used for built-in method references. */
 var objectProto = Object.prototype;
@@ -849,7 +911,7 @@ module.exports = getRawTag;
 
 
 /***/ }),
-/* 24 */
+/* 29 */
 /***/ (function(module, exports) {
 
 /** Used for built-in method references. */
@@ -877,7 +939,7 @@ module.exports = objectToString;
 
 
 /***/ }),
-/* 25 */
+/* 30 */
 /***/ (function(module, exports) {
 
 /**
@@ -912,7 +974,7 @@ module.exports = isObjectLike;
 
 
 /***/ }),
-/* 26 */
+/* 31 */
 /***/ (function(module, exports) {
 
 module.exports = isPromise;
@@ -924,10 +986,10 @@ function isPromise(obj) {
 
 
 /***/ }),
-/* 27 */
+/* 32 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var before = __webpack_require__(28);
+var before = __webpack_require__(33);
 
 /**
  * Creates a function that is restricted to invoking `func` once. Repeat calls
@@ -955,10 +1017,10 @@ module.exports = once;
 
 
 /***/ }),
-/* 28 */
+/* 33 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var toInteger = __webpack_require__(29);
+var toInteger = __webpack_require__(34);
 
 /** Error message constants. */
 var FUNC_ERROR_TEXT = 'Expected a function';
@@ -1001,10 +1063,10 @@ module.exports = before;
 
 
 /***/ }),
-/* 29 */
+/* 34 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var toFinite = __webpack_require__(30);
+var toFinite = __webpack_require__(35);
 
 /**
  * Converts `value` to an integer.
@@ -1043,10 +1105,10 @@ module.exports = toInteger;
 
 
 /***/ }),
-/* 30 */
+/* 35 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var toNumber = __webpack_require__(19);
+var toNumber = __webpack_require__(22);
 
 /** Used as references for various `Number` constants. */
 var INFINITY = 1 / 0,
@@ -1091,7 +1153,7 @@ module.exports = toFinite;
 
 
 /***/ }),
-/* 31 */
+/* 36 */
 /***/ (function(module, exports) {
 
 /**
@@ -1118,7 +1180,7 @@ module.exports = identity;
 
 
 /***/ }),
-/* 32 */
+/* 37 */
 /***/ (function(module, exports) {
 
 /**
@@ -1150,29 +1212,7 @@ module.exports = constant;
 
 
 /***/ }),
-/* 33 */
-/***/ (function(module, exports) {
-
-function _typeof(obj) {
-  "@babel/helpers - typeof";
-
-  if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
-    module.exports = _typeof = function _typeof(obj) {
-      return typeof obj;
-    };
-  } else {
-    module.exports = _typeof = function _typeof(obj) {
-      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
-    };
-  }
-
-  return _typeof(obj);
-}
-
-module.exports = _typeof;
-
-/***/ }),
-/* 34 */
+/* 38 */
 /***/ (function(module, exports) {
 
 /**
@@ -1198,7 +1238,7 @@ module.exports = last;
 
 
 /***/ }),
-/* 35 */
+/* 39 */
 /***/ (function(module, exports) {
 
 var nestRE = /^(attrs|props|on|nativeOn|class|style|hook)$/
@@ -1254,19 +1294,19 @@ function mergeFn (a, b) {
 
 
 /***/ }),
-/* 36 */
+/* 40 */
 /***/ (function(module, exports) {
 
-module.exports = __WEBPACK_EXTERNAL_MODULE__36__;
+module.exports = __WEBPACK_EXTERNAL_MODULE__40__;
 
 /***/ }),
-/* 37 */
+/* 41 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // extracted by mini-css-extract-plugin
 
 /***/ }),
-/* 38 */
+/* 42 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1294,11 +1334,11 @@ var defineProperty = __webpack_require__(10);
 var defineProperty_default = /*#__PURE__*/__webpack_require__.n(defineProperty);
 
 // EXTERNAL MODULE: ./node_modules/fuzzysearch/index.js
-var fuzzysearch = __webpack_require__(11);
+var fuzzysearch = __webpack_require__(14);
 var fuzzysearch_default = /*#__PURE__*/__webpack_require__.n(fuzzysearch);
 
 // EXTERNAL MODULE: ./node_modules/lodash/noop.js
-var noop = __webpack_require__(12);
+var noop = __webpack_require__(15);
 
 // CONCATENATED MODULE: ./src/utils/noop.js
 
@@ -1308,9 +1348,7 @@ var noop = __webpack_require__(12);
 var warning_warning =  false ? undefined : function warning(checker, complainer) {
   if (!checker()) {
     var _console;
-
     var message = ['[Vue-Treeselect Warning]'].concat(complainer());
-
     (_console = console).error.apply(_console, toConsumableArray_default()(message));
   }
 };
@@ -1321,7 +1359,6 @@ function onLeftClick(mouseDownHandler) {
       for (var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
         args[_key - 1] = arguments[_key];
       }
-
       mouseDownHandler.call.apply(mouseDownHandler, [this, evt].concat(args));
     }
   };
@@ -1331,7 +1368,6 @@ function scrollIntoView($scrollingEl, $focusedEl) {
   var scrollingReact = $scrollingEl.getBoundingClientRect();
   var focusedRect = $focusedEl.getBoundingClientRect();
   var overScroll = $focusedEl.offsetHeight / 3;
-
   if (focusedRect.bottom + overScroll > scrollingReact.bottom) {
     $scrollingEl.scrollTop = Math.min($focusedEl.offsetTop + $focusedEl.clientHeight - $scrollingEl.offsetHeight + overScroll, $scrollingEl.scrollHeight);
   } else if (focusedRect.top - overScroll < scrollingReact.top) {
@@ -1339,7 +1375,7 @@ function scrollIntoView($scrollingEl, $focusedEl) {
   }
 }
 // EXTERNAL MODULE: ./node_modules/lodash/debounce.js
-var debounce = __webpack_require__(13);
+var debounce = __webpack_require__(16);
 var debounce_default = /*#__PURE__*/__webpack_require__.n(debounce);
 
 // CONCATENATED MODULE: ./src/utils/debounce.js
@@ -1414,26 +1450,22 @@ function removeFromArray(arr, elem) {
 var intervalId;
 var registered = [];
 var INTERVAL_DURATION = 100;
-
 function run() {
   intervalId = setInterval(function () {
     registered.forEach(test);
   }, INTERVAL_DURATION);
 }
-
 function stop() {
   clearInterval(intervalId);
   intervalId = null;
 }
-
 function test(item) {
   var $el = item.$el,
-      listener = item.listener,
-      lastWidth = item.lastWidth,
-      lastHeight = item.lastHeight;
+    listener = item.listener,
+    lastWidth = item.lastWidth,
+    lastHeight = item.lastHeight;
   var width = $el.offsetWidth;
   var height = $el.offsetHeight;
-
   if (lastWidth !== width || lastHeight !== height) {
     item.lastWidth = width;
     item.lastHeight = height;
@@ -1443,7 +1475,6 @@ function test(item) {
     });
   }
 }
-
 function watchSizeForIE9($el, listener) {
   var item = {
     $el: $el,
@@ -1451,26 +1482,21 @@ function watchSizeForIE9($el, listener) {
     lastWidth: null,
     lastHeight: null
   };
-
   var unwatch = function unwatch() {
     removeFromArray(registered, item);
     if (!registered.length) stop();
   };
-
   registered.push(item);
   test(item);
   run();
   return unwatch;
 }
-
 function watchSize($el, listener) {
   var isIE9 = document.documentMode === 9;
   var locked = true;
-
   var wrappedListener = function wrappedListener() {
     return locked || listener.apply(void 0, arguments);
   };
-
   var implementation = isIE9 ? watchSizeForIE9 : index_es;
   var removeSizeWatcher = implementation($el, wrappedListener);
   locked = false;
@@ -1480,25 +1506,20 @@ function watchSize($el, listener) {
 function findScrollParents($el) {
   var $scrollParents = [];
   var $parent = $el.parentNode;
-
   while ($parent && $parent.nodeName !== 'BODY' && $parent.nodeType === document.ELEMENT_NODE) {
     if (isScrollElment($parent)) $scrollParents.push($parent);
     $parent = $parent.parentNode;
   }
-
   $scrollParents.push(window);
   return $scrollParents;
 }
-
 function isScrollElment($el) {
   var _getComputedStyle = getComputedStyle($el),
-      overflow = _getComputedStyle.overflow,
-      overflowX = _getComputedStyle.overflowX,
-      overflowY = _getComputedStyle.overflowY;
-
+    overflow = _getComputedStyle.overflow,
+    overflowX = _getComputedStyle.overflowX,
+    overflowY = _getComputedStyle.overflowY;
   return /(auto|scroll|overlay)/.test(overflow + overflowY + overflowX);
 }
-
 function setupResizeAndScrollEventListeners($el, listener) {
   var $scrollParents = findScrollParents($el);
   window.addEventListener('resize', listener, {
@@ -1525,25 +1546,25 @@ function isNaN_isNaN(x) {
   return x !== x;
 }
 // EXTERNAL MODULE: ./node_modules/is-promise/index.js
-var is_promise = __webpack_require__(26);
+var is_promise = __webpack_require__(31);
 var is_promise_default = /*#__PURE__*/__webpack_require__.n(is_promise);
 
 // CONCATENATED MODULE: ./src/utils/isPromise.js
 
 // EXTERNAL MODULE: ./node_modules/lodash/once.js
-var once = __webpack_require__(27);
+var once = __webpack_require__(32);
 var once_default = /*#__PURE__*/__webpack_require__.n(once);
 
 // CONCATENATED MODULE: ./src/utils/once.js
 
 // EXTERNAL MODULE: ./node_modules/lodash/identity.js
-var identity = __webpack_require__(31);
+var identity = __webpack_require__(36);
 var identity_default = /*#__PURE__*/__webpack_require__.n(identity);
 
 // CONCATENATED MODULE: ./src/utils/identity.js
 
 // EXTERNAL MODULE: ./node_modules/lodash/constant.js
-var constant = __webpack_require__(32);
+var constant = __webpack_require__(37);
 var constant_default = /*#__PURE__*/__webpack_require__.n(constant);
 
 // CONCATENATED MODULE: ./src/utils/constant.js
@@ -1553,17 +1574,15 @@ var createMap = function createMap() {
   return Object.create(null);
 };
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/typeof.js
-var helpers_typeof = __webpack_require__(33);
+var helpers_typeof = __webpack_require__(12);
 var typeof_default = /*#__PURE__*/__webpack_require__.n(helpers_typeof);
 
 // CONCATENATED MODULE: ./src/utils/deepExtend.js
-
 
 function isPlainObject(value) {
   if (value == null || typeof_default()(value) !== 'object') return false;
   return Object.getPrototypeOf(value) === Object.prototype;
 }
-
 function copy(obj, key, value) {
   if (isPlainObject(value)) {
     obj[key] || (obj[key] = {});
@@ -1572,20 +1591,17 @@ function copy(obj, key, value) {
     obj[key] = value;
   }
 }
-
 function deepExtend(target, source) {
   if (isPlainObject(source)) {
     var keys = Object.keys(source);
-
     for (var i = 0, len = keys.length; i < len; i++) {
       copy(target, keys[i], source[keys[i]]);
     }
   }
-
   return target;
 }
 // EXTERNAL MODULE: ./node_modules/lodash/last.js
-var lodash_last = __webpack_require__(34);
+var lodash_last = __webpack_require__(38);
 var last_default = /*#__PURE__*/__webpack_require__.n(lodash_last);
 
 // CONCATENATED MODULE: ./src/utils/last.js
@@ -1599,17 +1615,14 @@ function find(arr, predicate, ctx) {
   for (var i = 0, len = arr.length; i < len; i++) {
     if (predicate.call(ctx, arr[i], i, arr)) return arr[i];
   }
-
   return undefined;
 }
 // CONCATENATED MODULE: ./src/utils/quickDiff.js
 function quickDiff(arrA, arrB) {
   if (arrA.length !== arrB.length) return true;
-
   for (var i = 0; i < arrA.length; i++) {
     if (arrA[i] !== arrB[i]) return true;
   }
-
   return false;
 }
 // CONCATENATED MODULE: ./src/utils/index.js
@@ -1670,18 +1683,16 @@ var MENU_BUFFER = 40;
 
 
 
-
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
-
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { defineProperty_default()(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
-
-
+function _createForOfIteratorHelper(r, e) { var t = "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (!t) { if (Array.isArray(r) || (t = _unsupportedIterableToArray(r)) || e && r && "number" == typeof r.length) { t && (r = t); var _n = 0, F = function F() {}; return { s: F, n: function n() { return _n >= r.length ? { done: !0 } : { done: !1, value: r[_n++] }; }, e: function e(r) { throw r; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var o, a = !0, u = !1; return { s: function s() { t = t.call(r); }, n: function n() { var r = t.next(); return a = r.done, r; }, e: function e(r) { u = !0, o = r; }, f: function f() { try { a || null == t.return || t.return(); } finally { if (u) throw o; } } }; }
+function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
+function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
+function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
+function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { defineProperty_default()(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
 
 
 
 function sortValueByIndex(a, b) {
   var i = 0;
-
   do {
     if (a.level < i) return -1;
     if (b.level < i) return 1;
@@ -1689,11 +1700,9 @@ function sortValueByIndex(a, b) {
     i++;
   } while (true);
 }
-
 function sortValueByLevel(a, b) {
   return a.level === b.level ? sortValueByIndex(a, b) : a.level - b.level;
 }
-
 function createAsyncOptionsStates() {
   return {
     isLoaded: false,
@@ -1701,21 +1710,17 @@ function createAsyncOptionsStates() {
     loadingError: ''
   };
 }
-
 function stringifyOptionPropValue(value) {
   if (typeof value === 'string') return value;
   if (typeof value === 'number' && !isNaN_isNaN(value)) return value + '';
   return '';
 }
-
 function match(enableFuzzyMatch, needle, haystack) {
   return enableFuzzyMatch ? fuzzysearch_default()(needle, haystack) : includes(haystack, needle);
 }
-
 function getErrorMessage(err) {
   return err.message || String(err);
 }
-
 var instanceId = 0;
 /* harmony default export */ var treeselectMixin = ({
   provide: function provide() {
@@ -1848,6 +1853,10 @@ var instanceId = 0;
     joinValues: {
       type: Boolean,
       default: false
+    },
+    label: {
+      type: String,
+      default: null
     },
     limit: {
       type: Number,
@@ -1993,6 +2002,10 @@ var instanceId = 0;
     zIndex: {
       type: [Number, String],
       default: 999
+    },
+    scrollPositionOnCenter: {
+      type: Boolean,
+      default: false
     }
   },
   data: function data() {
@@ -2031,28 +2044,23 @@ var instanceId = 0;
     },
     internalValue: function internalValue() {
       var _this = this;
-
       var internalValue;
-
       if (this.single || this.flat || this.disableBranchNodes || this.valueConsistsOf === ALL) {
         internalValue = this.forest.selectedNodeIds.slice();
       } else if (this.valueConsistsOf === BRANCH_PRIORITY) {
         internalValue = this.forest.selectedNodeIds.filter(function (id) {
           var node = _this.getNode(id);
-
           if (node.isRootNode) return true;
           return !_this.isSelected(node.parentNode);
         });
       } else if (this.valueConsistsOf === LEAF_PRIORITY) {
         internalValue = this.forest.selectedNodeIds.filter(function (id) {
           var node = _this.getNode(id);
-
           if (node.isLeaf) return true;
           return node.children.length === 0;
         });
       } else if (this.valueConsistsOf === ALL_WITH_INDETERMINATE) {
         var _internalValue;
-
         var indeterminateNodeIds = [];
         internalValue = this.forest.selectedNodeIds.slice();
         this.selectedNodes.forEach(function (selectedNode) {
@@ -2062,10 +2070,8 @@ var instanceId = 0;
             indeterminateNodeIds.push(ancestor.id);
           });
         });
-
         (_internalValue = internalValue).push.apply(_internalValue, indeterminateNodeIds);
       }
-
       if (this.sortValueBy === LEVEL) {
         internalValue.sort(function (a, b) {
           return sortValueByLevel(_this.getNode(a), _this.getNode(b));
@@ -2075,7 +2081,6 @@ var instanceId = 0;
           return sortValueByIndex(_this.getNode(a), _this.getNode(b));
         });
       }
-
       return internalValue;
     },
     hasValue: function hasValue() {
@@ -2086,13 +2091,11 @@ var instanceId = 0;
     },
     visibleOptionIds: function visibleOptionIds() {
       var _this2 = this;
-
       var visibleOptionIds = [];
       this.traverseAllNodesByIndex(function (node) {
         if (!_this2.localSearch.active || _this2.shouldOptionBeIncludedInSearchResult(node)) {
           visibleOptionIds.push(node.id);
         }
-
         if (node.isBranch && !_this2.shouldExpand(node)) {
           return false;
         }
@@ -2148,7 +2151,6 @@ var instanceId = 0;
       } else {
         this.handleLocalSearch();
       }
-
       this.$emit('search-change', this.trigger.searchQuery, this.getInstanceId());
     },
     value: function value() {
@@ -2160,13 +2162,11 @@ var instanceId = 0;
   methods: {
     verifyProps: function verifyProps() {
       var _this3 = this;
-
       warning_warning(function () {
         return _this3.async ? _this3.searchable : true;
       }, function () {
         return 'For async search mode, the value of "searchable" prop must be true.';
       });
-
       if (this.options == null && !this.loadOptions) {
         warning_warning(function () {
           return false;
@@ -2174,7 +2174,6 @@ var instanceId = 0;
           return 'Are you meant to dynamically load options? You need to use "loadOptions" prop.';
         });
       }
-
       if (this.flat) {
         warning_warning(function () {
           return _this3.multiple;
@@ -2182,7 +2181,6 @@ var instanceId = 0;
           return 'You are using flat mode. But you forgot to add "multiple=true"?';
         });
       }
-
       if (!this.flat) {
         var propNames = ['autoSelectAncestors', 'autoSelectDescendants', 'autoDeselectAncestors', 'autoDeselectDescendants'];
         propNames.forEach(function (propName) {
@@ -2201,7 +2199,6 @@ var instanceId = 0;
       var options = this.async ? this.getRemoteSearchEntry().options : this.options ? this.options.filter(function (o) {
         return o;
       }) : {};
-
       if (Array.isArray(options)) {
         var prevNodeMap = this.forest.nodeMap;
         this.forest.nodeMap = createMap();
@@ -2211,21 +2208,19 @@ var instanceId = 0;
       } else {
         this.forest.normalizedOptions = [];
       }
-
       this.hasBranchNodes = this.forest.normalizedOptions.some(function (rootNode) {
         return rootNode.isBranch;
       });
+      this.expandParentNodes();
     },
     getInstanceId: function getInstanceId() {
       return this.instanceId == null ? this.id : this.instanceId;
     },
     getValue: function getValue() {
       var _this4 = this;
-
       if (this.valueFormat === 'id') {
         return this.multiple ? this.internalValue.slice() : this.internalValue[0];
       }
-
       var rawNodes = this.internalValue.map(function (id) {
         return _this4.getNode(id).raw;
       });
@@ -2237,15 +2232,12 @@ var instanceId = 0;
       }, function () {
         return "Invalid node id: ".concat(nodeId);
       });
-
       if (nodeId == null) {
         if (true) {
           console.error(this.options);
         }
-
         return null;
       }
-
       return nodeId in this.forest.nodeMap ? this.forest.nodeMap[nodeId] : this.createFallbackNode(nodeId);
     },
     createFallbackNode: function createFallbackNode(id) {
@@ -2270,13 +2262,10 @@ var instanceId = 0;
     },
     extractCheckedNodeIdsFromValue: function extractCheckedNodeIdsFromValue() {
       var _this5 = this;
-
       if (this.value == null) return [];
-
       if (this.valueFormat === 'id') {
         return this.multiple ? this.value.slice() : [this.value];
       }
-
       return (this.multiple ? this.value : [this.value]).map(function (node) {
         return _this5.enhancedNormalizer(node);
       }).map(function (node) {
@@ -2285,15 +2274,12 @@ var instanceId = 0;
     },
     extractNodeFromValue: function extractNodeFromValue(id) {
       var _this6 = this;
-
       var defaultNode = {
         id: id
       };
-
       if (this.valueFormat === 'id') {
         return defaultNode;
       }
-
       var valueArray = this.multiple ? Array.isArray(this.value) ? this.value : [] : this.value ? [this.value] : [];
       var matched = find(valueArray, function (node) {
         return node && _this6.enhancedNormalizer(node).id === id;
@@ -2302,9 +2288,7 @@ var instanceId = 0;
     },
     fixSelectedNodeIds: function fixSelectedNodeIds(nodeIdListOfPrevValue) {
       var _this7 = this;
-
       var nextSelectedNodeIds = [];
-
       if (this.single || this.flat || this.disableBranchNodes || this.valueConsistsOf === ALL) {
         nextSelectedNodeIds = nodeIdListOfPrevValue;
       } else if (this.valueConsistsOf === BRANCH_PRIORITY) {
@@ -2312,11 +2296,8 @@ var instanceId = 0;
           if (!nodeId) {
             return;
           }
-
           nextSelectedNodeIds.push(nodeId);
-
           var node = _this7.getNode(nodeId);
-
           if (node && node.isBranch) _this7.traverseDescendantsBFS(node, function (descendant) {
             if (descendant) {
               nextSelectedNodeIds.push(descendant.id);
@@ -2326,7 +2307,6 @@ var instanceId = 0;
       } else if (this.valueConsistsOf === LEAF_PRIORITY) {
         var map = createMap();
         var queue = nodeIdListOfPrevValue.slice();
-
         while (queue.length) {
           var nodeId = queue.shift();
           var node = this.getNode(nodeId);
@@ -2338,18 +2318,13 @@ var instanceId = 0;
         }
       } else if (this.valueConsistsOf === ALL_WITH_INDETERMINATE) {
         var _map = createMap();
-
         var _queue = nodeIdListOfPrevValue.filter(function (nodeId) {
           var node = _this7.getNode(nodeId);
-
           return node.isLeaf || node.children.length === 0;
         });
-
         while (_queue.length) {
           var _nodeId = _queue.shift();
-
           var _node = this.getNode(_nodeId);
-
           nextSelectedNodeIds.push(_nodeId);
           if (_node.isRootNode) continue;
           if (!_node.parentNode) continue;
@@ -2357,21 +2332,17 @@ var instanceId = 0;
           if (--_map[_node.parentNode.id] === 0) _queue.push(_node.parentNode.id);
         }
       }
-
       var hasChanged = quickDiff(this.forest.selectedNodeIds, nextSelectedNodeIds);
       if (hasChanged) this.forest.selectedNodeIds = nextSelectedNodeIds;
       this.buildForestState();
     },
     keepDataOfSelectedNodes: function keepDataOfSelectedNodes(prevNodeMap) {
       var _this8 = this;
-
       this.forest.selectedNodeIds.forEach(function (id) {
         if (!prevNodeMap[id]) return;
-
         var node = _objectSpread(_objectSpread({}, prevNodeMap[id]), {}, {
           isFallbackNode: true
         });
-
         _this8.$set(_this8.forest.nodeMap, id, node);
       });
     },
@@ -2381,7 +2352,6 @@ var instanceId = 0;
     traverseDescendantsBFS: function traverseDescendantsBFS(parentNode, callback) {
       if (!parentNode.isBranch) return;
       var queue = parentNode.children.slice();
-
       while (queue.length) {
         var currNode = queue[0];
         if (currNode.isBranch) queue.push.apply(queue, toConsumableArray_default()(currNode.children));
@@ -2391,20 +2361,16 @@ var instanceId = 0;
     },
     traverseDescendantsDFS: function traverseDescendantsDFS(parentNode, callback) {
       var _this9 = this;
-
       if (!parentNode.isBranch) return;
       parentNode.children.forEach(function (child) {
         _this9.traverseDescendantsDFS(child, callback);
-
         callback(child);
       });
     },
     traverseAllNodesDFS: function traverseAllNodesDFS(callback) {
       var _this10 = this;
-
       this.forest.normalizedOptions.forEach(function (rootNode) {
         _this10.traverseDescendantsDFS(rootNode, callback);
-
         callback(rootNode);
       });
     },
@@ -2416,7 +2382,6 @@ var instanceId = 0;
           }
         });
       };
-
       walk({
         children: this.forest.normalizedOptions
       });
@@ -2445,17 +2410,14 @@ var instanceId = 0;
       evt.stopPropagation();
       if (this.disabled) return;
       var isClickedOnValueContainer = this.getValueContainer().$el.contains(evt.target);
-
       if (isClickedOnValueContainer && !this.menu.isOpen && (this.openOnClick || this.trigger.isFocused)) {
         this.openMenu();
       }
-
       if (this._blurOnSelect) {
         this.blurInput();
       } else {
         this.focusInput();
       }
-
       this.resetFlags();
     }),
     handleClickOutside: function handleClickOutside(evt) {
@@ -2466,30 +2428,23 @@ var instanceId = 0;
     },
     handleLocalSearch: function handleLocalSearch(retry) {
       var _this11 = this;
-
       var searchQuery = this.trigger.searchQuery;
-
       var done = function done() {
         return _this11.resetHighlightedOptionWhenNecessary(true);
       };
-
       var ignore = function ignore() {
         return _this11.resetHighlightedOptionWhenNecessary(false);
       };
-
       if (!searchQuery) {
         this.localSearch.active = false;
         this.lastSearchInput = null;
         return done();
       }
-
       if (searchQuery.length < this.startSearchLength) {
         return ignore();
       }
-
       if (this.waitSearchFinishTime > 0) {
         var now = new Date();
-
         if (!this.lastSearchInput) {
           setTimeout(function () {
             _this11.handleLocalSearch(true);
@@ -2497,9 +2452,7 @@ var instanceId = 0;
           this.lastSearchInput = now;
           return ignore();
         }
-
         var diff = now - this.lastSearchInput;
-
         if (diff < this.waitSearchFinishTime && !retry) {
           setTimeout(function () {
             _this11.handleLocalSearch(true);
@@ -2507,26 +2460,20 @@ var instanceId = 0;
           this.lastSearchInput = now;
           return ignore();
         }
-
         if (retry && diff < this.waitSearchFinishTime) {
           return ignore();
         }
-
         this.lastSearchInput = now;
       }
-
       this.localSearch.active = true;
       this.localSearch.noResults = true;
       this.traverseAllNodesDFS(function (node) {
         if (node.isBranch) {
-          var _this11$$set;
-
           node.isExpandedOnSearch = false;
           node.showAllChildrenOnSearch = false;
           node.isMatched = false;
           node.hasMatchedDescendants = false;
-
-          _this11.$set(_this11.localSearch.countMap, node.id, (_this11$$set = {}, defineProperty_default()(_this11$$set, ALL_CHILDREN, 0), defineProperty_default()(_this11$$set, ALL_DESCENDANTS, 0), defineProperty_default()(_this11$$set, LEAF_CHILDREN, 0), defineProperty_default()(_this11$$set, LEAF_DESCENDANTS, 0), _this11$$set));
+          _this11.$set(_this11.localSearch.countMap, node.id, defineProperty_default()(defineProperty_default()(defineProperty_default()(defineProperty_default()({}, ALL_CHILDREN, 0), ALL_DESCENDANTS, 0), LEAF_CHILDREN, 0), LEAF_DESCENDANTS, 0));
         }
       });
       var lowerCasedSearchQuery = searchQuery.trim().toLocaleLowerCase();
@@ -2541,7 +2488,6 @@ var instanceId = 0;
             return match(!_this11.disableFuzzyMatching, lowerCasedSearchQuery, node.lowerCased[matchKey]);
           });
         }
-
         if (node.isMatched) {
           _this11.localSearch.noResults = false;
           node.ancestors.forEach(function (ancestor) {
@@ -2550,13 +2496,11 @@ var instanceId = 0;
           if (node.isLeaf) node.ancestors.forEach(function (ancestor) {
             return _this11.localSearch.countMap[ancestor.id][LEAF_DESCENDANTS]++;
           });
-
           if (node.parentNode !== NO_PARENT_NODE) {
             _this11.localSearch.countMap[node.parentNode.id][ALL_CHILDREN] += 1;
             if (node.isLeaf) _this11.localSearch.countMap[node.parentNode.id][LEAF_CHILDREN] += 1;
           }
         }
-
         if ((node.isMatched || node.isBranch && node.isExpandedOnSearch) && node.parentNode !== NO_PARENT_NODE) {
           node.parentNode.isExpandedOnSearch = true;
           node.parentNode.hasMatchedDescendants = true;
@@ -2567,20 +2511,15 @@ var instanceId = 0;
     },
     handleRemoteSearch: function handleRemoteSearch() {
       var _this12 = this;
-
       var searchQuery = this.trigger.searchQuery;
       var entry = this.getRemoteSearchEntry();
-
       var done = function done() {
         _this12.initialize();
-
         _this12.resetHighlightedOptionWhenNecessary(true);
       };
-
       if ((searchQuery === '' || this.cacheOptions) && entry.isLoaded) {
         return done();
       }
-
       this.callLoadOptionsProp({
         action: ASYNC_SEARCH,
         args: {
@@ -2609,13 +2548,10 @@ var instanceId = 0;
     },
     getRemoteSearchEntry: function getRemoteSearchEntry() {
       var _this13 = this;
-
       var searchQuery = this.trigger.searchQuery;
-
       var entry = this.remoteSearch[searchQuery] || _objectSpread(_objectSpread({}, createAsyncOptionsStates()), {}, {
         options: []
       });
-
       this.$watch(function () {
         return entry.options;
       }, function () {
@@ -2623,7 +2559,6 @@ var instanceId = 0;
       }, {
         deep: true
       });
-
       if (searchQuery === '') {
         if (Array.isArray(this.defaultOptions)) {
           entry.options = this.defaultOptions;
@@ -2634,11 +2569,9 @@ var instanceId = 0;
           return entry;
         }
       }
-
       if (!this.remoteSearch[searchQuery]) {
         this.$set(this.remoteSearch, searchQuery, entry);
       }
-
       return entry;
     },
     shouldExpand: function shouldExpand(node) {
@@ -2654,7 +2587,6 @@ var instanceId = 0;
       if (this.localSearch.active && !this.shouldOptionBeIncludedInSearchResult(node)) {
         return false;
       }
-
       return true;
     },
     getControl: function getControl() {
@@ -2667,25 +2599,19 @@ var instanceId = 0;
     },
     setCurrentHighlightedOption: function setCurrentHighlightedOption(node) {
       var _this14 = this;
-
       var scroll = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : true;
       var prev = this.menu.current;
-
       if (prev != null && prev in this.forest.nodeMap) {
         this.forest.nodeMap[prev].isHighlighted = false;
       }
-
       this.menu.current = node.id;
       node.isHighlighted = true;
-
       if (this.menu.isOpen && scroll) {
         var scrollToOption = function scrollToOption() {
           var $menu = _this14.getMenu();
-
           var $option = $menu.querySelector(".vue-treeselect__option[data-id=\"".concat(node.id, "\"]"));
           if ($option) scrollIntoView($menu, $option);
         };
-
         if (this.getMenu()) {
           scrollToOption();
         } else {
@@ -2696,7 +2622,6 @@ var instanceId = 0;
     resetHighlightedOptionWhenNecessary: function resetHighlightedOptionWhenNecessary() {
       var forceReset = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
       var current = this.menu.current;
-
       if (forceReset || current == null || !(current in this.forest.nodeMap) || !this.shouldShowOptionInMenu(this.getNode(current))) {
         this.highlightFirstOption();
       }
@@ -2741,6 +2666,9 @@ var instanceId = 0;
       this.$nextTick(this.restoreMenuScrollPosition);
       if (!this.options && !this.async) this.loadRootOptions();
       this.toggleClickOutsideEvent(true);
+      if (this.scrollPositionOnCenter) {
+        this.$nextTick(this.scrollMenuOnCenter);
+      }
       this.$emit('open', this.getInstanceId());
     },
     toggleMenu: function toggleMenu() {
@@ -2752,35 +2680,30 @@ var instanceId = 0;
     },
     toggleExpanded: function toggleExpanded(node) {
       var nextState;
-
       if (this.localSearch.active) {
         nextState = node.isExpandedOnSearch = !node.isExpandedOnSearch;
         if (nextState) node.showAllChildrenOnSearch = true;
       } else {
         nextState = node.isExpanded = !node.isExpanded;
       }
-
       if (nextState && !node.childrenStates.isLoaded) {
         this.loadChildrenOptions(node);
       }
     },
     buildForestState: function buildForestState() {
       var _this15 = this;
-
       var selectedNodeMap = createMap();
       this.forest.selectedNodeIds.forEach(function (selectedNodeId) {
         selectedNodeMap[selectedNodeId] = true;
       });
       this.forest.selectedNodeMap = selectedNodeMap;
       var checkedStateMap = createMap();
-
       if (this.multiple) {
         this.traverseAllNodesByIndex(function (node) {
           checkedStateMap[node.id] = UNCHECKED;
         });
         this.selectedNodes.forEach(function (selectedNode) {
           checkedStateMap[selectedNode.id] = CHECKED;
-
           if (!_this15.flat && !_this15.disableBranchNodes) {
             selectedNode.ancestors.forEach(function (ancestorNode) {
               if (!_this15.isSelected(ancestorNode)) {
@@ -2790,7 +2713,6 @@ var instanceId = 0;
           }
         });
       }
-
       this.forest.checkedStateMap = checkedStateMap;
     },
     enhancedNormalizer: function enhancedNormalizer(raw) {
@@ -2798,96 +2720,60 @@ var instanceId = 0;
     },
     normalize: function normalize(parentNode, nodes, prevNodeMap) {
       var _this16 = this;
-
       var normalizedOptions = nodes.map(function (node) {
         return [_this16.enhancedNormalizer(node), node];
       }).map(function (_ref, index) {
         var _ref2 = slicedToArray_default()(_ref, 2),
-            node = _ref2[0],
-            raw = _ref2[1];
-
+          node = _ref2[0],
+          raw = _ref2[1];
         _this16.checkDuplication(node);
-
         _this16.verifyNodeShape(node);
-
         var id = node.id,
-            label = node.label,
-            children = node.children,
-            isDefaultExpanded = node.isDefaultExpanded;
+          label = node.label,
+          children = node.children,
+          isDefaultExpanded = node.isDefaultExpanded;
         var isRootNode = parentNode === NO_PARENT_NODE;
         var level = isRootNode ? 0 : parentNode.level + 1;
         var isBranch = Array.isArray(children) || children === null;
         var isLeaf = !isBranch;
         var isDisabled = !!node.isDisabled || !_this16.flat && !isRootNode && parentNode.isDisabled;
         var isNew = !!node.isNew;
-
         var lowerCased = _this16.matchKeys.reduce(function (prev, key) {
           return _objectSpread(_objectSpread({}, prev), {}, defineProperty_default()({}, key, stringifyOptionPropValue(node[key]).toLocaleLowerCase()));
         }, {});
-
         var nestedSearchLabel = isRootNode ? lowerCased.label : parentNode.nestedSearchLabel + ' ' + lowerCased.label;
-
         var normalized = _this16.$set(_this16.forest.nodeMap, id, createMap());
-
         _this16.$set(normalized, 'id', id);
-
         _this16.$set(normalized, 'label', label);
-
         _this16.$set(normalized, 'level', level);
-
         _this16.$set(normalized, 'ancestors', isRootNode ? [] : [parentNode].concat(parentNode.ancestors));
-
         _this16.$set(normalized, 'index', (isRootNode ? [] : parentNode.index).concat(index));
-
         _this16.$set(normalized, 'parentNode', parentNode);
-
         _this16.$set(normalized, 'lowerCased', lowerCased);
-
         _this16.$set(normalized, 'nestedSearchLabel', nestedSearchLabel);
-
         _this16.$set(normalized, 'isDisabled', isDisabled);
-
         _this16.$set(normalized, 'isNew', isNew);
-
         _this16.$set(normalized, 'isMatched', false);
-
         _this16.$set(normalized, 'isHighlighted', false);
-
         _this16.$set(normalized, 'isBranch', isBranch);
-
         _this16.$set(normalized, 'isLeaf', isLeaf);
-
         _this16.$set(normalized, 'isRootNode', isRootNode);
-
         _this16.$set(normalized, 'raw', raw);
-
         if (isBranch) {
-          var _this16$$set;
-
           var isLoaded = Array.isArray(children);
-
           _this16.$set(normalized, 'childrenStates', _objectSpread(_objectSpread({}, createAsyncOptionsStates()), {}, {
             isLoaded: isLoaded
           }));
-
           _this16.$set(normalized, 'isExpanded', typeof isDefaultExpanded === 'boolean' ? isDefaultExpanded : level < _this16.defaultExpandLevel);
-
           _this16.$set(normalized, 'hasMatchedDescendants', false);
-
           _this16.$set(normalized, 'hasDisabledDescendants', false);
-
           _this16.$set(normalized, 'isExpandedOnSearch', false);
-
           _this16.$set(normalized, 'showAllChildrenOnSearch', false);
-
-          _this16.$set(normalized, 'count', (_this16$$set = {}, defineProperty_default()(_this16$$set, ALL_CHILDREN, 0), defineProperty_default()(_this16$$set, ALL_DESCENDANTS, 0), defineProperty_default()(_this16$$set, LEAF_CHILDREN, 0), defineProperty_default()(_this16$$set, LEAF_DESCENDANTS, 0), _this16$$set));
-
+          _this16.$set(normalized, 'count', defineProperty_default()(defineProperty_default()(defineProperty_default()(defineProperty_default()({}, ALL_CHILDREN, 0), ALL_DESCENDANTS, 0), LEAF_CHILDREN, 0), LEAF_DESCENDANTS, 0));
           _this16.$set(normalized, 'children', isLoaded ? _this16.normalize(normalized, children, prevNodeMap) : []);
-
           if (isDefaultExpanded === true) normalized.ancestors.forEach(function (ancestor) {
             ancestor.isExpanded = true;
           });
-
           if (!isLoaded && typeof _this16.loadOptions !== 'function') {
             warning_warning(function () {
               return false;
@@ -2898,30 +2784,25 @@ var instanceId = 0;
             _this16.loadChildrenOptions(normalized);
           }
         }
-
         normalized.ancestors.forEach(function (ancestor) {
           return ancestor.count[ALL_DESCENDANTS]++;
         });
         if (isLeaf) normalized.ancestors.forEach(function (ancestor) {
           return ancestor.count[LEAF_DESCENDANTS]++;
         });
-
         if (!isRootNode) {
           parentNode.count[ALL_CHILDREN] += 1;
           if (isLeaf) parentNode.count[LEAF_CHILDREN] += 1;
           if (isDisabled) parentNode.hasDisabledDescendants = true;
         }
-
         if (prevNodeMap && prevNodeMap[id]) {
           var prev = prevNodeMap[id];
           normalized.isMatched = prev.isMatched;
           normalized.showAllChildrenOnSearch = prev.showAllChildrenOnSearch;
           normalized.isHighlighted = prev.isHighlighted;
-
           if (prev.isBranch && normalized.isBranch) {
             normalized.isExpanded = prev.isExpanded;
             normalized.isExpandedOnSearch = prev.isExpandedOnSearch;
-
             if (prev.childrenStates.isLoaded && !normalized.childrenStates.isLoaded) {
               normalized.isExpanded = false;
             } else {
@@ -2929,10 +2810,8 @@ var instanceId = 0;
             }
           }
         }
-
         return normalized;
       });
-
       if (this.branchNodesFirst) {
         var branchNodes = normalizedOptions.filter(function (option) {
           return option.isBranch;
@@ -2942,12 +2821,10 @@ var instanceId = 0;
         });
         normalizedOptions = branchNodes.concat(leafNodes);
       }
-
       return normalizedOptions;
     },
     loadRootOptions: function loadRootOptions() {
       var _this17 = this;
-
       this.callLoadOptionsProp({
         action: LOAD_ROOT_OPTIONS,
         isPending: function isPending() {
@@ -2959,7 +2836,6 @@ var instanceId = 0;
         },
         succeed: function succeed() {
           _this17.rootOptionsStates.isLoaded = true;
-
           _this17.$nextTick(function () {
             _this17.resetHighlightedOptionWhenNecessary(true);
           });
@@ -2974,9 +2850,8 @@ var instanceId = 0;
     },
     loadChildrenOptions: function loadChildrenOptions(parentNode) {
       var _this18 = this;
-
       var id = parentNode.id,
-          raw = parentNode.raw;
+        raw = parentNode.raw;
       this.callLoadOptionsProp({
         action: LOAD_CHILDREN_OPTIONS,
         args: {
@@ -3002,17 +2877,15 @@ var instanceId = 0;
     },
     callLoadOptionsProp: function callLoadOptionsProp(_ref3) {
       var action = _ref3.action,
-          args = _ref3.args,
-          isPending = _ref3.isPending,
-          start = _ref3.start,
-          succeed = _ref3.succeed,
-          fail = _ref3.fail,
-          end = _ref3.end;
-
+        args = _ref3.args,
+        isPending = _ref3.isPending,
+        start = _ref3.start,
+        succeed = _ref3.succeed,
+        fail = _ref3.fail,
+        end = _ref3.end;
       if (!this.loadOptions || isPending()) {
         return;
       }
-
       start();
       var callback = once_default()(function (err, result) {
         if (err) {
@@ -3020,7 +2893,6 @@ var instanceId = 0;
         } else {
           succeed(result);
         }
-
         end();
       });
       var result = this.loadOptions(_objectSpread(_objectSpread({
@@ -3030,7 +2902,6 @@ var instanceId = 0;
       }, args), {}, {
         callback: callback
       }));
-
       if (is_promise_default()(result)) {
         result.then(function () {
           callback();
@@ -3043,7 +2914,6 @@ var instanceId = 0;
     },
     checkDuplication: function checkDuplication(node) {
       var _this19 = this;
-
       warning_warning(function () {
         return !(node.id in _this19.forest.nodeMap && !_this19.forest.nodeMap[node.id].isFallbackNode);
       }, function () {
@@ -3061,34 +2931,30 @@ var instanceId = 0;
       if (this.disabled || node.isDisabled) {
         return;
       }
-
       if (this.single) {
         this.clear();
       }
-
       var nextState = this.multiple && !this.flat ? this.forest.checkedStateMap[node.id] === UNCHECKED : !this.isSelected(node);
-
       if (nextState) {
         this._selectNode(node);
       } else {
         this._deselectNode(node);
       }
-
       this.buildForestState();
-
       if (nextState) {
+        this.expandParentNodes();
         this.$emit('select', node.raw, this.getInstanceId());
       } else {
         this.$emit('deselect', node.raw, this.getInstanceId());
       }
-
       if (this.localSearch.active && nextState && (this.single || this.clearOnSelect)) {
+        if (this.scrollPositionOnCenter) {
+          this.$nextTick(this.scrollMenuOnCenter);
+        }
         this.resetSearchQuery();
       }
-
       if (this.single && this.closeOnSelect) {
         this.closeMenu();
-
         if (this.searchable) {
           this._blurOnSelect = true;
         }
@@ -3096,7 +2962,6 @@ var instanceId = 0;
     },
     clear: function clear() {
       var _this20 = this;
-
       if (this.hasValue) {
         if (this.single || this.allowClearingDisabled) {
           this.forest.selectedNodeIds = [];
@@ -3105,20 +2970,16 @@ var instanceId = 0;
               return _this20.getNode(nodeId).isDisabled;
             });
           }
-
         this.buildForestState();
       }
     },
     _selectNode: function _selectNode(node) {
       var _this21 = this;
-
       if (this.single || this.disableBranchNodes) {
         return this.addValue(node);
       }
-
       if (this.flat) {
         this.addValue(node);
-
         if (this.autoSelectAncestors) {
           node.ancestors.forEach(function (ancestor) {
             if (!_this21.isSelected(ancestor) && !ancestor.isDisabled) _this21.addValue(ancestor);
@@ -3128,16 +2989,12 @@ var instanceId = 0;
             if (!_this21.isSelected(descendant) && !descendant.isDisabled) _this21.addValue(descendant);
           });
         }
-
         return;
       }
-
-      var isFullyChecked = node.isLeaf || !node.hasDisabledDescendants || this.allowSelectingDisabledDescendants;
-
+      var isFullyChecked = node.isLeaf || (!node.hasDisabledDescendants) || (this.allowSelectingDisabledDescendants);
       if (isFullyChecked) {
         this.addValue(node);
       }
-
       if (node.isBranch) {
         this.traverseDescendantsBFS(node, function (descendant) {
           if (!descendant.isDisabled || _this21.allowSelectingDisabledDescendants) {
@@ -3145,10 +3002,8 @@ var instanceId = 0;
           }
         });
       }
-
       if (isFullyChecked) {
         var curr = node;
-
         while ((curr = curr.parentNode) !== NO_PARENT_NODE) {
           if (curr.children.every(this.isSelected)) this.addValue(curr);else break;
         }
@@ -3156,14 +3011,11 @@ var instanceId = 0;
     },
     _deselectNode: function _deselectNode(node) {
       var _this22 = this;
-
       if (this.disableBranchNodes) {
         return this.removeValue(node);
       }
-
       if (this.flat) {
         this.removeValue(node);
-
         if (this.autoDeselectAncestors) {
           node.ancestors.forEach(function (ancestor) {
             if (_this22.isSelected(ancestor) && !ancestor.isDisabled) _this22.removeValue(ancestor);
@@ -3173,26 +3025,20 @@ var instanceId = 0;
             if (_this22.isSelected(descendant) && !descendant.isDisabled) _this22.removeValue(descendant);
           });
         }
-
         return;
       }
-
       var hasUncheckedSomeDescendants = false;
-
       if (node.isBranch) {
         this.traverseDescendantsDFS(node, function (descendant) {
           if (!descendant.isDisabled || _this22.allowSelectingDisabledDescendants) {
             _this22.removeValue(descendant);
-
             hasUncheckedSomeDescendants = true;
           }
         });
       }
-
       if (node.isLeaf || hasUncheckedSomeDescendants || node.children.length === 0) {
         this.removeValue(node);
         var curr = node;
-
         while ((curr = curr.parentNode) !== NO_PARENT_NODE) {
           if (this.isSelected(curr)) this.removeValue(curr);else break;
         }
@@ -3214,12 +3060,48 @@ var instanceId = 0;
       this.select(lastSelectedNode);
     },
     saveMenuScrollPosition: function saveMenuScrollPosition() {
+      if (this.scrollPositionOnCenter) return;
       var $menu = this.getMenu();
       if ($menu) this.menu.lastScrollPosition = $menu.scrollTop;
     },
     restoreMenuScrollPosition: function restoreMenuScrollPosition() {
+      if (this.scrollPositionOnCenter) return;
       var $menu = this.getMenu();
       if ($menu) $menu.scrollTop = this.menu.lastScrollPosition;
+    },
+    scrollMenuOnCenter: function scrollMenuOnCenter() {
+      var $option = document.querySelector('.vue-treeselect__option--selected');
+      var $menu = this.getMenu();
+      if ($option && $menu) {
+        var position = Math.max($option.offsetTop - ($menu.offsetHeight - $option.offsetHeight) / 2, 0);
+        $menu.scrollTop = position;
+      }
+    },
+    expandParentNodes: function expandParentNodes() {
+      var _iterator = _createForOfIteratorHelper(this.forest.selectedNodeIds),
+        _step;
+      try {
+        for (_iterator.s(); !(_step = _iterator.n()).done;) {
+          var id = _step.value;
+          var node = this.getNode(id);
+          var _iterator2 = _createForOfIteratorHelper(node.ancestors),
+            _step2;
+          try {
+            for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
+              var ancestor = _step2.value;
+              ancestor.isExpanded = true;
+            }
+          } catch (err) {
+            _iterator2.e(err);
+          } finally {
+            _iterator2.f();
+          }
+        }
+      } catch (err) {
+        _iterator.e(err);
+      } finally {
+        _iterator.f();
+      }
     }
   },
   created: function created() {
@@ -3236,16 +3118,14 @@ var instanceId = 0;
     this.toggleClickOutsideEvent(false);
   }
 });
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader/lib??vue-loader-options!./src/components/HiddenFields.vue?vue&type=script&lang=js&
-
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader/lib??vue-loader-options!./src/components/HiddenFields.vue?vue&type=script&lang=js
 
 function stringifyValue(value) {
   if (typeof value === 'string') return value;
   if (value != null && !isNaN_isNaN(value)) return JSON.stringify(value);
   return '';
 }
-
-/* harmony default export */ var HiddenFieldsvue_type_script_lang_js_ = ({
+/* harmony default export */ var HiddenFieldsvue_type_script_lang_js = ({
   name: 'vue-treeselect--hidden-fields',
   inject: ['instance'],
   functional: true,
@@ -3269,8 +3149,8 @@ function stringifyValue(value) {
     });
   }
 });
-// CONCATENATED MODULE: ./src/components/HiddenFields.vue?vue&type=script&lang=js&
- /* harmony default export */ var components_HiddenFieldsvue_type_script_lang_js_ = (HiddenFieldsvue_type_script_lang_js_); 
+// CONCATENATED MODULE: ./src/components/HiddenFields.vue?vue&type=script&lang=js
+ /* harmony default export */ var components_HiddenFieldsvue_type_script_lang_js = (HiddenFieldsvue_type_script_lang_js); 
 // CONCATENATED MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
 /* globals __VUE_SSR_CONTEXT__ */
 
@@ -3278,20 +3158,19 @@ function stringifyValue(value) {
 // This module is a runtime utility for cleaner component module output and will
 // be included in the final webpack user bundle.
 
-function normalizeComponent (
+function normalizeComponent(
   scriptExports,
   render,
   staticRenderFns,
   functionalTemplate,
   injectStyles,
   scopeId,
-  moduleIdentifier, /* server only */
+  moduleIdentifier /* server only */,
   shadowMode /* vue-cli only */
 ) {
   // Vue.extend constructor export interop
-  var options = typeof scriptExports === 'function'
-    ? scriptExports.options
-    : scriptExports
+  var options =
+    typeof scriptExports === 'function' ? scriptExports.options : scriptExports
 
   // render functions
   if (render) {
@@ -3311,7 +3190,8 @@ function normalizeComponent (
   }
 
   var hook
-  if (moduleIdentifier) { // server build
+  if (moduleIdentifier) {
+    // server build
     hook = function (context) {
       // 2.3 injection
       context =
@@ -3337,11 +3217,11 @@ function normalizeComponent (
   } else if (injectStyles) {
     hook = shadowMode
       ? function () {
-        injectStyles.call(
-          this,
-          (options.functional ? this.parent : this).$root.$options.shadowRoot
-        )
-      }
+          injectStyles.call(
+            this,
+            (options.functional ? this.parent : this).$root.$options.shadowRoot
+          )
+        }
       : injectStyles
   }
 
@@ -3352,16 +3232,14 @@ function normalizeComponent (
       options._injectStyles = hook
       // register for functional component in vue file
       var originalRender = options.render
-      options.render = function renderWithStyleInjection (h, context) {
+      options.render = function renderWithStyleInjection(h, context) {
         hook.call(context)
         return originalRender(h, context)
       }
     } else {
       // inject component registration as beforeCreate hook
       var existing = options.beforeCreate
-      options.beforeCreate = existing
-        ? [].concat(existing, hook)
-        : [hook]
+      options.beforeCreate = existing ? [].concat(existing, hook) : [hook]
     }
   }
 
@@ -3380,7 +3258,7 @@ var HiddenFields_render, staticRenderFns
 /* normalize component */
 
 var component = normalizeComponent(
-  components_HiddenFieldsvue_type_script_lang_js_,
+  components_HiddenFieldsvue_type_script_lang_js,
   HiddenFields_render,
   staticRenderFns,
   false,
@@ -3395,15 +3273,15 @@ if (false) { var api; }
 component.options.__file = "src/components/HiddenFields.vue"
 /* harmony default export */ var HiddenFields = (component.exports);
 // EXTERNAL MODULE: ./node_modules/babel-helper-vue-jsx-merge-props/index.js
-var babel_helper_vue_jsx_merge_props = __webpack_require__(35);
+var babel_helper_vue_jsx_merge_props = __webpack_require__(39);
 var babel_helper_vue_jsx_merge_props_default = /*#__PURE__*/__webpack_require__.n(babel_helper_vue_jsx_merge_props);
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader/lib??vue-loader-options!./src/components/Input.vue?vue&type=script&lang=js&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader/lib??vue-loader-options!./src/components/Input.vue?vue&type=script&lang=js
 
 
 
 var keysThatRequireMenuBeingOpen = [KEY_CODES.ENTER, KEY_CODES.END, KEY_CODES.HOME, KEY_CODES.ARROW_LEFT, KEY_CODES.ARROW_UP, KEY_CODES.ARROW_RIGHT, KEY_CODES.ARROW_DOWN];
-/* harmony default export */ var Inputvue_type_script_lang_js_ = ({
+/* harmony default export */ var Inputvue_type_script_lang_js = ({
   name: 'vue-treeselect--input',
   inject: ['instance'],
   data: function data() {
@@ -3447,7 +3325,6 @@ var keysThatRequireMenuBeingOpen = [KEY_CODES.ENTER, KEY_CODES.END, KEY_CODES.HO
     },
     focus: function focus() {
       var instance = this.instance;
-
       if (!instance.disabled) {
         this.$refs.input && this.$refs.input.focus();
       }
@@ -3463,18 +3340,15 @@ var keysThatRequireMenuBeingOpen = [KEY_CODES.ENTER, KEY_CODES.END, KEY_CODES.HO
     onBlur: function onBlur() {
       var instance = this.instance;
       var menu = instance.getMenu();
-
       if (menu && document.activeElement === menu) {
         return this.focus();
       }
-
       instance.trigger.isFocused = false;
       instance.closeMenu();
     },
     onInput: function onInput(evt) {
       var value = evt.target.value;
       this.value = value;
-
       if (value) {
         this.debouncedCallback();
       } else {
@@ -3486,32 +3360,27 @@ var keysThatRequireMenuBeingOpen = [KEY_CODES.ENTER, KEY_CODES.END, KEY_CODES.HO
       var instance = this.instance;
       var key = 'which' in evt ? evt.which : evt.keyCode;
       if (evt.ctrlKey || evt.shiftKey || evt.altKey || evt.metaKey) return;
-
       if (!instance.menu.isOpen && includes(keysThatRequireMenuBeingOpen, key)) {
         evt.preventDefault();
         return instance.openMenu();
       }
-
       switch (key) {
         case KEY_CODES.BACKSPACE:
           {
             if (instance.backspaceRemoves && !this.value.length) {
               instance.removeLastValue();
             }
-
             break;
           }
-
         case KEY_CODES.ENTER:
           {
             evt.preventDefault();
             if (instance.menu.current === null) return;
             var current = instance.getNode(instance.menu.current);
-            if (current.isBranch && instance.disableBranchNodes) return;
+            if (current.isBranch && instance.disableBranchNodes || !current.isMatched) return;
             instance.select(current);
             break;
           }
-
         case KEY_CODES.ESCAPE:
           {
             if (this.value.length) {
@@ -3519,28 +3388,23 @@ var keysThatRequireMenuBeingOpen = [KEY_CODES.ENTER, KEY_CODES.END, KEY_CODES.HO
             } else if (instance.menu.isOpen) {
               instance.closeMenu();
             }
-
             break;
           }
-
         case KEY_CODES.END:
           {
             evt.preventDefault();
             instance.highlightLastOption();
             break;
           }
-
         case KEY_CODES.HOME:
           {
             evt.preventDefault();
             instance.highlightFirstOption();
             break;
           }
-
         case KEY_CODES.ARROW_LEFT:
           {
             var _current = instance.getNode(instance.menu.current);
-
             if (_current.isBranch && instance.shouldExpand(_current)) {
               evt.preventDefault();
               instance.toggleExpanded(_current);
@@ -3548,45 +3412,36 @@ var keysThatRequireMenuBeingOpen = [KEY_CODES.ENTER, KEY_CODES.END, KEY_CODES.HO
               evt.preventDefault();
               instance.setCurrentHighlightedOption(_current.parentNode);
             }
-
             break;
           }
-
         case KEY_CODES.ARROW_UP:
           {
             evt.preventDefault();
             instance.highlightPrevOption();
             break;
           }
-
         case KEY_CODES.ARROW_RIGHT:
           {
             var _current2 = instance.getNode(instance.menu.current);
-
             if (_current2.isBranch && !instance.shouldExpand(_current2)) {
               evt.preventDefault();
               instance.toggleExpanded(_current2);
             }
-
             break;
           }
-
         case KEY_CODES.ARROW_DOWN:
           {
             evt.preventDefault();
             instance.highlightNextOption();
             break;
           }
-
         case KEY_CODES.DELETE:
           {
             if (instance.deleteRemoves && !this.value.length) {
               instance.removeLastValue();
             }
-
             break;
           }
-
         default:
           {
             instance.openMenu();
@@ -3603,12 +3458,10 @@ var keysThatRequireMenuBeingOpen = [KEY_CODES.ENTER, KEY_CODES.END, KEY_CODES.HO
       var instance = this.instance;
       var props = {};
       var children = [];
-
       if (instance.searchable && !instance.disabled) {
         children.push(this.renderInput());
         if (this.needAutoSize) children.push(this.renderSizer());
       }
-
       if (!instance.searchable) {
         deepExtend(props, {
           on: {
@@ -3619,7 +3472,6 @@ var keysThatRequireMenuBeingOpen = [KEY_CODES.ENTER, KEY_CODES.END, KEY_CODES.HO
           ref: 'input'
         });
       }
-
       if (!instance.searchable && !instance.disabled) {
         deepExtend(props, {
           attrs: {
@@ -3627,7 +3479,6 @@ var keysThatRequireMenuBeingOpen = [KEY_CODES.ENTER, KEY_CODES.END, KEY_CODES.HO
           }
         });
       }
-
       return h("div", babel_helper_vue_jsx_merge_props_default()([{
         "class": "vue-treeselect__input-container"
       }, props]), [children]);
@@ -3676,8 +3527,8 @@ var keysThatRequireMenuBeingOpen = [KEY_CODES.ENTER, KEY_CODES.END, KEY_CODES.HO
     return this.renderInputContainer();
   }
 });
-// CONCATENATED MODULE: ./src/components/Input.vue?vue&type=script&lang=js&
- /* harmony default export */ var components_Inputvue_type_script_lang_js_ = (Inputvue_type_script_lang_js_); 
+// CONCATENATED MODULE: ./src/components/Input.vue?vue&type=script&lang=js
+ /* harmony default export */ var components_Inputvue_type_script_lang_js = (Inputvue_type_script_lang_js); 
 // CONCATENATED MODULE: ./src/components/Input.vue
 var Input_render, Input_staticRenderFns
 
@@ -3687,7 +3538,7 @@ var Input_render, Input_staticRenderFns
 /* normalize component */
 
 var Input_component = normalizeComponent(
-  components_Inputvue_type_script_lang_js_,
+  components_Inputvue_type_script_lang_js,
   Input_render,
   Input_staticRenderFns,
   false,
@@ -3701,8 +3552,8 @@ var Input_component = normalizeComponent(
 if (false) { var Input_api; }
 Input_component.options.__file = "src/components/Input.vue"
 /* harmony default export */ var Input = (Input_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader/lib??vue-loader-options!./src/components/Placeholder.vue?vue&type=script&lang=js&
-/* harmony default export */ var Placeholdervue_type_script_lang_js_ = ({
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader/lib??vue-loader-options!./src/components/Placeholder.vue?vue&type=script&lang=js
+/* harmony default export */ var Placeholdervue_type_script_lang_js = ({
   name: 'vue-treeselect--placeholder',
   inject: ['instance'],
   render: function render() {
@@ -3718,8 +3569,8 @@ Input_component.options.__file = "src/components/Input.vue"
     }, [instance.placeholder]);
   }
 });
-// CONCATENATED MODULE: ./src/components/Placeholder.vue?vue&type=script&lang=js&
- /* harmony default export */ var components_Placeholdervue_type_script_lang_js_ = (Placeholdervue_type_script_lang_js_); 
+// CONCATENATED MODULE: ./src/components/Placeholder.vue?vue&type=script&lang=js
+ /* harmony default export */ var components_Placeholdervue_type_script_lang_js = (Placeholdervue_type_script_lang_js); 
 // CONCATENATED MODULE: ./src/components/Placeholder.vue
 var Placeholder_render, Placeholder_staticRenderFns
 
@@ -3729,7 +3580,7 @@ var Placeholder_render, Placeholder_staticRenderFns
 /* normalize component */
 
 var Placeholder_component = normalizeComponent(
-  components_Placeholdervue_type_script_lang_js_,
+  components_Placeholdervue_type_script_lang_js,
   Placeholder_render,
   Placeholder_staticRenderFns,
   false,
@@ -3743,10 +3594,10 @@ var Placeholder_component = normalizeComponent(
 if (false) { var Placeholder_api; }
 Placeholder_component.options.__file = "src/components/Placeholder.vue"
 /* harmony default export */ var Placeholder = (Placeholder_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader/lib??vue-loader-options!./src/components/SingleValue.vue?vue&type=script&lang=js&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader/lib??vue-loader-options!./src/components/SingleValue.vue?vue&type=script&lang=js
 
 
-/* harmony default export */ var SingleValuevue_type_script_lang_js_ = ({
+/* harmony default export */ var SingleValuevue_type_script_lang_js = ({
   name: 'vue-treeselect--single-value',
   inject: ['instance'],
   methods: {
@@ -3762,7 +3613,7 @@ Placeholder_component.options.__file = "src/components/Placeholder.vue"
   render: function render() {
     var h = arguments[0];
     var instance = this.instance,
-        renderValueContainer = this.$parent.renderValueContainer;
+      renderValueContainer = this.$parent.renderValueContainer;
     var shouldShowValue = instance.hasValue && !instance.trigger.searchQuery;
     return renderValueContainer([shouldShowValue && h("div", {
       "class": "vue-treeselect__single-value"
@@ -3771,8 +3622,8 @@ Placeholder_component.options.__file = "src/components/Placeholder.vue"
     })]);
   }
 });
-// CONCATENATED MODULE: ./src/components/SingleValue.vue?vue&type=script&lang=js&
- /* harmony default export */ var components_SingleValuevue_type_script_lang_js_ = (SingleValuevue_type_script_lang_js_); 
+// CONCATENATED MODULE: ./src/components/SingleValue.vue?vue&type=script&lang=js
+ /* harmony default export */ var components_SingleValuevue_type_script_lang_js = (SingleValuevue_type_script_lang_js); 
 // CONCATENATED MODULE: ./src/components/SingleValue.vue
 var SingleValue_render, SingleValue_staticRenderFns
 
@@ -3782,7 +3633,7 @@ var SingleValue_render, SingleValue_staticRenderFns
 /* normalize component */
 
 var SingleValue_component = normalizeComponent(
-  components_SingleValuevue_type_script_lang_js_,
+  components_SingleValuevue_type_script_lang_js,
   SingleValue_render,
   SingleValue_staticRenderFns,
   false,
@@ -3796,26 +3647,24 @@ var SingleValue_component = normalizeComponent(
 if (false) { var SingleValue_api; }
 SingleValue_component.options.__file = "src/components/SingleValue.vue"
 /* harmony default export */ var SingleValue = (SingleValue_component.exports);
-// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js!./node_modules/vue-loader/lib??vue-loader-options!./src/components/icons/Delete.vue?vue&type=template&id=364b6320&
-var Deletevue_type_template_id_364b6320_render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??ref--5!./node_modules/cache-loader/dist/cjs.js!./node_modules/vue-loader/lib??vue-loader-options!./src/components/icons/Delete.vue?vue&type=template&id=364b6320
+var Deletevue_type_template_id_364b6320_render = function render() {
+  var _vm = this,
+    _c = _vm._self._c
   return _c(
     "svg",
     {
       attrs: {
         xmlns: "http://www.w3.org/2000/svg",
-        viewBox: "0 0 348.333 348.333"
-      }
+        viewBox: "0 0 348.333 348.333",
+      },
     },
     [
       _c("path", {
         attrs: {
-          d:
-            "M336.559 68.611L231.016 174.165l105.543 105.549c15.699 15.705 15.699 41.145 0 56.85-7.844 7.844-18.128 11.769-28.407 11.769-10.296 0-20.581-3.919-28.419-11.769L174.167 231.003 68.609 336.563c-7.843 7.844-18.128 11.769-28.416 11.769-10.285 0-20.563-3.919-28.413-11.769-15.699-15.698-15.699-41.139 0-56.85l105.54-105.549L11.774 68.611c-15.699-15.699-15.699-41.145 0-56.844 15.696-15.687 41.127-15.687 56.829 0l105.563 105.554L279.721 11.767c15.705-15.687 41.139-15.687 56.832 0 15.705 15.699 15.705 41.145.006 56.844z"
-        }
-      })
+          d: "M336.559 68.611L231.016 174.165l105.543 105.549c15.699 15.705 15.699 41.145 0 56.85-7.844 7.844-18.128 11.769-28.407 11.769-10.296 0-20.581-3.919-28.419-11.769L174.167 231.003 68.609 336.563c-7.843 7.844-18.128 11.769-28.416 11.769-10.285 0-20.563-3.919-28.413-11.769-15.699-15.698-15.699-41.139 0-56.85l105.54-105.549L11.774 68.611c-15.699-15.699-15.699-41.145 0-56.844 15.696-15.687 41.127-15.687 56.829 0l105.563 105.554L279.721 11.767c15.705-15.687 41.139-15.687 56.832 0 15.705 15.699 15.705 41.145.006 56.844z",
+        },
+      }),
     ]
   )
 }
@@ -3823,14 +3672,14 @@ var Deletevue_type_template_id_364b6320_staticRenderFns = []
 Deletevue_type_template_id_364b6320_render._withStripped = true
 
 
-// CONCATENATED MODULE: ./src/components/icons/Delete.vue?vue&type=template&id=364b6320&
+// CONCATENATED MODULE: ./src/components/icons/Delete.vue?vue&type=template&id=364b6320
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader/lib??vue-loader-options!./src/components/icons/Delete.vue?vue&type=script&lang=js&
-/* harmony default export */ var Deletevue_type_script_lang_js_ = ({
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader/lib??vue-loader-options!./src/components/icons/Delete.vue?vue&type=script&lang=js
+/* harmony default export */ var Deletevue_type_script_lang_js = ({
   name: 'vue-treeselect--x'
 });
-// CONCATENATED MODULE: ./src/components/icons/Delete.vue?vue&type=script&lang=js&
- /* harmony default export */ var icons_Deletevue_type_script_lang_js_ = (Deletevue_type_script_lang_js_); 
+// CONCATENATED MODULE: ./src/components/icons/Delete.vue?vue&type=script&lang=js
+ /* harmony default export */ var icons_Deletevue_type_script_lang_js = (Deletevue_type_script_lang_js); 
 // CONCATENATED MODULE: ./src/components/icons/Delete.vue
 
 
@@ -3840,7 +3689,7 @@ Deletevue_type_template_id_364b6320_render._withStripped = true
 /* normalize component */
 
 var Delete_component = normalizeComponent(
-  icons_Deletevue_type_script_lang_js_,
+  icons_Deletevue_type_script_lang_js,
   Deletevue_type_template_id_364b6320_render,
   Deletevue_type_template_id_364b6320_staticRenderFns,
   false,
@@ -3854,10 +3703,10 @@ var Delete_component = normalizeComponent(
 if (false) { var Delete_api; }
 Delete_component.options.__file = "src/components/icons/Delete.vue"
 /* harmony default export */ var Delete = (Delete_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader/lib??vue-loader-options!./src/components/MultiValueItem.vue?vue&type=script&lang=js&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader/lib??vue-loader-options!./src/components/MultiValueItem.vue?vue&type=script&lang=js
 
 
-/* harmony default export */ var MultiValueItemvue_type_script_lang_js_ = ({
+/* harmony default export */ var MultiValueItemvue_type_script_lang_js = ({
   name: 'vue-treeselect--multi-value-item',
   inject: ['instance'],
   props: {
@@ -3869,14 +3718,14 @@ Delete_component.options.__file = "src/components/icons/Delete.vue"
   methods: {
     handleMouseDown: onLeftClick(function handleMouseDown() {
       var instance = this.instance,
-          node = this.node;
+        node = this.node;
       instance.select(node);
     })
   },
   render: function render() {
     var h = arguments[0];
     var instance = this.instance,
-        node = this.node;
+      node = this.node;
     var itemClass = {
       'vue-treeselect__multi-value-item': true,
       'vue-treeselect__multi-value-item-disabled': node.isDisabled,
@@ -3900,8 +3749,8 @@ Delete_component.options.__file = "src/components/icons/Delete.vue"
     }, [h(Delete)])])]);
   }
 });
-// CONCATENATED MODULE: ./src/components/MultiValueItem.vue?vue&type=script&lang=js&
- /* harmony default export */ var components_MultiValueItemvue_type_script_lang_js_ = (MultiValueItemvue_type_script_lang_js_); 
+// CONCATENATED MODULE: ./src/components/MultiValueItem.vue?vue&type=script&lang=js
+ /* harmony default export */ var components_MultiValueItemvue_type_script_lang_js = (MultiValueItemvue_type_script_lang_js); 
 // CONCATENATED MODULE: ./src/components/MultiValueItem.vue
 var MultiValueItem_render, MultiValueItem_staticRenderFns
 
@@ -3911,7 +3760,7 @@ var MultiValueItem_render, MultiValueItem_staticRenderFns
 /* normalize component */
 
 var MultiValueItem_component = normalizeComponent(
-  components_MultiValueItemvue_type_script_lang_js_,
+  components_MultiValueItemvue_type_script_lang_js,
   MultiValueItem_render,
   MultiValueItem_staticRenderFns,
   false,
@@ -3925,12 +3774,12 @@ var MultiValueItem_component = normalizeComponent(
 if (false) { var MultiValueItem_api; }
 MultiValueItem_component.options.__file = "src/components/MultiValueItem.vue"
 /* harmony default export */ var MultiValueItem = (MultiValueItem_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader/lib??vue-loader-options!./src/components/MultiValue.vue?vue&type=script&lang=js&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader/lib??vue-loader-options!./src/components/MultiValue.vue?vue&type=script&lang=js
 
 
 
 
-/* harmony default export */ var MultiValuevue_type_script_lang_js_ = ({
+/* harmony default export */ var MultiValuevue_type_script_lang_js = ({
   name: 'vue-treeselect--multi-value',
   inject: ['instance'],
   methods: {
@@ -3979,8 +3828,8 @@ MultiValueItem_component.options.__file = "src/components/MultiValueItem.vue"
     })]));
   }
 });
-// CONCATENATED MODULE: ./src/components/MultiValue.vue?vue&type=script&lang=js&
- /* harmony default export */ var components_MultiValuevue_type_script_lang_js_ = (MultiValuevue_type_script_lang_js_); 
+// CONCATENATED MODULE: ./src/components/MultiValue.vue?vue&type=script&lang=js
+ /* harmony default export */ var components_MultiValuevue_type_script_lang_js = (MultiValuevue_type_script_lang_js); 
 // CONCATENATED MODULE: ./src/components/MultiValue.vue
 var MultiValue_render, MultiValue_staticRenderFns
 
@@ -3990,7 +3839,7 @@ var MultiValue_render, MultiValue_staticRenderFns
 /* normalize component */
 
 var MultiValue_component = normalizeComponent(
-  components_MultiValuevue_type_script_lang_js_,
+  components_MultiValuevue_type_script_lang_js,
   MultiValue_render,
   MultiValue_staticRenderFns,
   false,
@@ -4004,26 +3853,24 @@ var MultiValue_component = normalizeComponent(
 if (false) { var MultiValue_api; }
 MultiValue_component.options.__file = "src/components/MultiValue.vue"
 /* harmony default export */ var MultiValue = (MultiValue_component.exports);
-// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js!./node_modules/vue-loader/lib??vue-loader-options!./src/components/icons/Arrow.vue?vue&type=template&id=11186cd4&
-var Arrowvue_type_template_id_11186cd4_render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??ref--5!./node_modules/cache-loader/dist/cjs.js!./node_modules/vue-loader/lib??vue-loader-options!./src/components/icons/Arrow.vue?vue&type=template&id=11186cd4
+var Arrowvue_type_template_id_11186cd4_render = function render() {
+  var _vm = this,
+    _c = _vm._self._c
   return _c(
     "svg",
     {
       attrs: {
         xmlns: "http://www.w3.org/2000/svg",
-        viewBox: "0 0 292.362 292.362"
-      }
+        viewBox: "0 0 292.362 292.362",
+      },
     },
     [
       _c("path", {
         attrs: {
-          d:
-            "M286.935 69.377c-3.614-3.617-7.898-5.424-12.848-5.424H18.274c-4.952 0-9.233 1.807-12.85 5.424C1.807 72.998 0 77.279 0 82.228c0 4.948 1.807 9.229 5.424 12.847l127.907 127.907c3.621 3.617 7.902 5.428 12.85 5.428s9.233-1.811 12.847-5.428L286.935 95.074c3.613-3.617 5.427-7.898 5.427-12.847 0-4.948-1.814-9.229-5.427-12.85z"
-        }
-      })
+          d: "M286.935 69.377c-3.614-3.617-7.898-5.424-12.848-5.424H18.274c-4.952 0-9.233 1.807-12.85 5.424C1.807 72.998 0 77.279 0 82.228c0 4.948 1.807 9.229 5.424 12.847l127.907 127.907c3.621 3.617 7.902 5.428 12.85 5.428s9.233-1.811 12.847-5.428L286.935 95.074c3.613-3.617 5.427-7.898 5.427-12.847 0-4.948-1.814-9.229-5.427-12.85z",
+        },
+      }),
     ]
   )
 }
@@ -4031,14 +3878,14 @@ var Arrowvue_type_template_id_11186cd4_staticRenderFns = []
 Arrowvue_type_template_id_11186cd4_render._withStripped = true
 
 
-// CONCATENATED MODULE: ./src/components/icons/Arrow.vue?vue&type=template&id=11186cd4&
+// CONCATENATED MODULE: ./src/components/icons/Arrow.vue?vue&type=template&id=11186cd4
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader/lib??vue-loader-options!./src/components/icons/Arrow.vue?vue&type=script&lang=js&
-/* harmony default export */ var Arrowvue_type_script_lang_js_ = ({
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader/lib??vue-loader-options!./src/components/icons/Arrow.vue?vue&type=script&lang=js
+/* harmony default export */ var Arrowvue_type_script_lang_js = ({
   name: 'vue-treeselect--arrow'
 });
-// CONCATENATED MODULE: ./src/components/icons/Arrow.vue?vue&type=script&lang=js&
- /* harmony default export */ var icons_Arrowvue_type_script_lang_js_ = (Arrowvue_type_script_lang_js_); 
+// CONCATENATED MODULE: ./src/components/icons/Arrow.vue?vue&type=script&lang=js
+ /* harmony default export */ var icons_Arrowvue_type_script_lang_js = (Arrowvue_type_script_lang_js); 
 // CONCATENATED MODULE: ./src/components/icons/Arrow.vue
 
 
@@ -4048,7 +3895,7 @@ Arrowvue_type_template_id_11186cd4_render._withStripped = true
 /* normalize component */
 
 var Arrow_component = normalizeComponent(
-  icons_Arrowvue_type_script_lang_js_,
+  icons_Arrowvue_type_script_lang_js,
   Arrowvue_type_template_id_11186cd4_render,
   Arrowvue_type_template_id_11186cd4_staticRenderFns,
   false,
@@ -4062,13 +3909,13 @@ var Arrow_component = normalizeComponent(
 if (false) { var Arrow_api; }
 Arrow_component.options.__file = "src/components/icons/Arrow.vue"
 /* harmony default export */ var Arrow = (Arrow_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader/lib??vue-loader-options!./src/components/Control.vue?vue&type=script&lang=js&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader/lib??vue-loader-options!./src/components/Control.vue?vue&type=script&lang=js
 
 
 
 
 
-/* harmony default export */ var Controlvue_type_script_lang_js_ = ({
+/* harmony default export */ var Controlvue_type_script_lang_js = ({
   name: 'vue-treeselect--control',
   inject: ['instance'],
   computed: {
@@ -4128,11 +3975,9 @@ Arrow_component.options.__file = "src/components/icons/Arrow.vue"
       evt.preventDefault();
       var instance = this.instance;
       var result = instance.beforeClearAll();
-
       var handler = function handler(shouldClear) {
         if (shouldClear) instance.clear();
       };
-
       if (is_promise_default()(result)) {
         result.then(handler);
       } else {
@@ -4170,8 +4015,8 @@ Arrow_component.options.__file = "src/components/icons/Arrow.vue"
     }), this.renderX(), this.renderArrow()]);
   }
 });
-// CONCATENATED MODULE: ./src/components/Control.vue?vue&type=script&lang=js&
- /* harmony default export */ var components_Controlvue_type_script_lang_js_ = (Controlvue_type_script_lang_js_); 
+// CONCATENATED MODULE: ./src/components/Control.vue?vue&type=script&lang=js
+ /* harmony default export */ var components_Controlvue_type_script_lang_js = (Controlvue_type_script_lang_js); 
 // CONCATENATED MODULE: ./src/components/Control.vue
 var Control_render, Control_staticRenderFns
 
@@ -4181,7 +4026,7 @@ var Control_render, Control_staticRenderFns
 /* normalize component */
 
 var Control_component = normalizeComponent(
-  components_Controlvue_type_script_lang_js_,
+  components_Controlvue_type_script_lang_js,
   Control_render,
   Control_staticRenderFns,
   false,
@@ -4195,8 +4040,8 @@ var Control_component = normalizeComponent(
 if (false) { var Control_api; }
 Control_component.options.__file = "src/components/Control.vue"
 /* harmony default export */ var Control = (Control_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader/lib??vue-loader-options!./src/components/Tip.vue?vue&type=script&lang=js&
-/* harmony default export */ var Tipvue_type_script_lang_js_ = ({
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader/lib??vue-loader-options!./src/components/Tip.vue?vue&type=script&lang=js
+/* harmony default export */ var Tipvue_type_script_lang_js = ({
   name: 'vue-treeselect--tip',
   functional: true,
   props: {
@@ -4212,7 +4057,7 @@ Control_component.options.__file = "src/components/Control.vue"
   render: function render(_, context) {
     var h = arguments[0];
     var props = context.props,
-        children = context.children;
+      children = context.children;
     return h("div", {
       "class": "vue-treeselect__tip vue-treeselect__".concat(props.type, "-tip")
     }, [h("div", {
@@ -4224,8 +4069,8 @@ Control_component.options.__file = "src/components/Control.vue"
     }, [children])]);
   }
 });
-// CONCATENATED MODULE: ./src/components/Tip.vue?vue&type=script&lang=js&
- /* harmony default export */ var components_Tipvue_type_script_lang_js_ = (Tipvue_type_script_lang_js_); 
+// CONCATENATED MODULE: ./src/components/Tip.vue?vue&type=script&lang=js
+ /* harmony default export */ var components_Tipvue_type_script_lang_js = (Tipvue_type_script_lang_js); 
 // CONCATENATED MODULE: ./src/components/Tip.vue
 var Tip_render, Tip_staticRenderFns
 
@@ -4235,7 +4080,7 @@ var Tip_render, Tip_staticRenderFns
 /* normalize component */
 
 var Tip_component = normalizeComponent(
-  components_Tipvue_type_script_lang_js_,
+  components_Tipvue_type_script_lang_js,
   Tip_render,
   Tip_staticRenderFns,
   false,
@@ -4245,11 +4090,8 @@ var Tip_component = normalizeComponent(
   
 )
 
-/* hot reload */
-if (false) { var Tip_api; }
-Tip_component.options.__file = "src/components/Tip.vue"
 /* harmony default export */ var Tip = (Tip_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader/lib??vue-loader-options!./src/components/Option.vue?vue&type=script&lang=js&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader/lib??vue-loader-options!./src/components/Option.vue?vue&type=script&lang=js
 
 
 
@@ -4268,12 +4110,12 @@ var Option = {
   computed: {
     shouldExpand: function shouldExpand() {
       var instance = this.instance,
-          node = this.node;
+        node = this.node;
       return node.isBranch && instance.shouldExpand(node);
     },
     shouldShow: function shouldShow() {
       var instance = this.instance,
-          node = this.node;
+        node = this.node;
       return instance.shouldShowOptionInMenu(node);
     }
   },
@@ -4281,7 +4123,7 @@ var Option = {
     renderOption: function renderOption() {
       var h = this.$createElement;
       var instance = this.instance,
-          node = this.node;
+        node = this.node;
       var optionClass = {
         'vue-treeselect__option': true,
         'vue-treeselect__option--disabled': node.isDisabled,
@@ -4310,9 +4152,8 @@ var Option = {
     renderArrow: function renderArrow() {
       var h = this.$createElement;
       var instance = this.instance,
-          node = this.node;
+        node = this.node;
       if (instance.shouldFlattenOptions && this.shouldShow) return null;
-
       if (node.isBranch) {
         var transitionProps = {
           props: {
@@ -4333,14 +4174,12 @@ var Option = {
           "class": arrowClass
         })])]);
       }
-
       if (instance.hasBranchNodes) {
         if (!arrowPlaceholder) arrowPlaceholder = h("div", {
           "class": "vue-treeselect__option-arrow-placeholder"
         }, ["\xA0"]);
         return arrowPlaceholder;
       }
-
       return null;
     },
     renderLabelContainer: function renderLabelContainer(children) {
@@ -4355,7 +4194,7 @@ var Option = {
     renderCheckboxContainer: function renderCheckboxContainer(children) {
       var h = this.$createElement;
       var instance = this.instance,
-          node = this.node;
+        node = this.node;
       if (instance.single) return null;
       if (instance.disableBranchNodes && node.isBranch) return null;
       return h("div", {
@@ -4365,7 +4204,7 @@ var Option = {
     renderCheckbox: function renderCheckbox() {
       var h = this.$createElement;
       var instance = this.instance,
-          node = this.node;
+        node = this.node;
       var checkedState = instance.forest.checkedStateMap[node.id];
       var checkboxClass = {
         'vue-treeselect__checkbox': true,
@@ -4387,7 +4226,7 @@ var Option = {
     renderLabel: function renderLabel() {
       var h = this.$createElement;
       var instance = this.instance,
-          node = this.node;
+        node = this.node;
       var shouldShowCount = node.isBranch && (instance.localSearch.active ? instance.showCountOnSearchComputed : instance.showCount);
       var count = shouldShowCount ? instance.localSearch.active ? instance.localSearch.countMap[node.id][instance.showCountOf] : node.count[instance.showCountOf] : NaN;
       var labelClassName = 'vue-treeselect__label';
@@ -4422,7 +4261,7 @@ var Option = {
     renderNoChildrenTip: function renderNoChildrenTip() {
       var h = this.$createElement;
       var instance = this.instance,
-          node = this.node;
+        node = this.node;
       if (!node.childrenStates.isLoaded || node.children.length) return null;
       return h(Tip, {
         attrs: {
@@ -4434,7 +4273,7 @@ var Option = {
     renderLoadingChildrenTip: function renderLoadingChildrenTip() {
       var h = this.$createElement;
       var instance = this.instance,
-          node = this.node;
+        node = this.node;
       if (!node.childrenStates.isLoading) return null;
       return h(Tip, {
         attrs: {
@@ -4446,7 +4285,7 @@ var Option = {
     renderLoadingChildrenErrorTip: function renderLoadingChildrenErrorTip() {
       var h = this.$createElement;
       var instance = this.instance,
-          node = this.node;
+        node = this.node;
       if (!node.childrenStates.loadingError) return null;
       return h(Tip, {
         attrs: {
@@ -4465,19 +4304,18 @@ var Option = {
     },
     handleMouseEnterOption: function handleMouseEnterOption(evt) {
       var instance = this.instance,
-          node = this.node;
+        node = this.node;
       if (evt.target !== evt.currentTarget) return;
       instance.setCurrentHighlightedOption(node, false);
     },
     handleMouseDownOnArrow: onLeftClick(function handleMouseDownOnOptionArrow() {
       var instance = this.instance,
-          node = this.node;
+        node = this.node;
       instance.toggleExpanded(node);
     }),
     handleMouseDownOnLabelContainer: onLeftClick(function handleMouseDownOnLabelContainer() {
       var instance = this.instance,
-          node = this.node;
-
+        node = this.node;
       if (node.isBranch && instance.disableBranchNodes) {
         instance.toggleExpanded(node);
       } else {
@@ -4486,7 +4324,7 @@ var Option = {
     }),
     handleMouseDownOnRetry: onLeftClick(function handleMouseDownOnRetry() {
       var instance = this.instance,
-          node = this.node;
+        node = this.node;
       instance.loadChildrenOptions(node);
     })
   },
@@ -4494,11 +4332,9 @@ var Option = {
     var h = arguments[0];
     var node = this.node;
     var indentLevel = this.instance.shouldFlattenOptions ? 0 : node.level;
-
     var listItemClass = defineProperty_default()({
       'vue-treeselect__list-item': true
     }, "vue-treeselect__indent-level-".concat(indentLevel), true);
-
     var transitionProps = {
       props: {
         name: 'vue-treeselect__list--transition'
@@ -4509,9 +4345,9 @@ var Option = {
     }, [this.renderOption(), node.isBranch && h("transition", transitionProps, [this.renderSubOptionsList()])]);
   }
 };
-/* harmony default export */ var Optionvue_type_script_lang_js_ = (Option);
-// CONCATENATED MODULE: ./src/components/Option.vue?vue&type=script&lang=js&
- /* harmony default export */ var components_Optionvue_type_script_lang_js_ = (Optionvue_type_script_lang_js_); 
+/* harmony default export */ var Optionvue_type_script_lang_js = (Option);
+// CONCATENATED MODULE: ./src/components/Option.vue?vue&type=script&lang=js
+ /* harmony default export */ var components_Optionvue_type_script_lang_js = (Optionvue_type_script_lang_js); 
 // CONCATENATED MODULE: ./src/components/Option.vue
 var Option_render, Option_staticRenderFns
 
@@ -4521,7 +4357,7 @@ var Option_render, Option_staticRenderFns
 /* normalize component */
 
 var Option_component = normalizeComponent(
-  components_Optionvue_type_script_lang_js_,
+  components_Optionvue_type_script_lang_js,
   Option_render,
   Option_staticRenderFns,
   false,
@@ -4531,22 +4367,11 @@ var Option_component = normalizeComponent(
   
 )
 
-/* hot reload */
-if (false) { var Option_api; }
-Option_component.options.__file = "src/components/Option.vue"
 /* harmony default export */ var components_Option = (Option_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader/lib??vue-loader-options!./src/components/Menu.vue?vue&type=script&lang=js&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader/lib??vue-loader-options!./src/components/Menu.vue?vue&type=script&lang=js
 
 
-
-
-var directionMap = {
-  top: 'top',
-  bottom: 'bottom',
-  above: 'top',
-  below: 'bottom'
-};
-/* harmony default export */ var Menuvue_type_script_lang_js_ = ({
+/* harmony default export */ var Menuvue_type_script_lang_js = ({
   name: 'vue-treeselect--menu',
   inject: ['instance'],
   computed: {
@@ -4609,7 +4434,6 @@ var directionMap = {
     },
     renderNormalMenuInner: function renderNormalMenuInner() {
       var instance = this.instance;
-
       if (instance.rootOptionsStates.isLoading) {
         return this.renderLoadingOptionsTip();
       } else if (instance.rootOptionsStates.loadingError) {
@@ -4622,7 +4446,6 @@ var directionMap = {
     },
     renderLocalSearchMenuInner: function renderLocalSearchMenuInner() {
       var instance = this.instance;
-
       if (instance.rootOptionsStates.isLoading) {
         return this.renderLoadingOptionsTip();
       } else if (instance.rootOptionsStates.loadingError) {
@@ -4640,7 +4463,6 @@ var directionMap = {
       var entry = instance.getRemoteSearchEntry();
       var shouldShowSearchPromptTip = instance.trigger.searchQuery === '' && !instance.defaultOptions;
       var shouldShowNoResultsTip = shouldShowSearchPromptTip ? false : entry.isLoaded && entry.options.length === 0;
-
       if (shouldShowSearchPromptTip) {
         return this.renderSearchPromptTip();
       } else if (entry.isLoading) {
@@ -4745,56 +4567,12 @@ var directionMap = {
       }, [instance.noResultsText]);
     },
     onMenuOpen: function onMenuOpen() {
-      // this.adjustMenuOpenDirection();
-      // this.setupMenuSizeWatcher();
-      // this.setupMenuResizeAndScrollEventListeners();
       return true;
     },
     onMenuClose: function onMenuClose() {
       this.removeMenuSizeWatcher();
       this.removeMenuResizeAndScrollEventListeners();
     },
-    // adjustMenuOpenDirection: function adjustMenuOpenDirection() {
-    //   var instance = this.instance;
-    //   if (!instance.menu.isOpen) return;
-    //   var $menu = instance.getMenu();
-    //   var $control = instance.getControl();
-    //   var menuRect = $menu.getBoundingClientRect();
-    //   var controlRect = $control.getBoundingClientRect();
-    //   var menuHeight = menuRect.height;
-    //   var viewportHeight = window.innerHeight;
-    //   var spaceAbove = controlRect.top;
-    //   var spaceBelow = window.innerHeight - controlRect.bottom;
-    //   var isControlInViewport = controlRect.top >= 0 && controlRect.top <= viewportHeight || controlRect.top < 0 && controlRect.bottom > 0;
-    //   var hasEnoughSpaceBelow = spaceBelow > menuHeight + MENU_BUFFER;
-    //   var hasEnoughSpaceAbove = spaceAbove > menuHeight + MENU_BUFFER;
-
-    //   if (!isControlInViewport) {
-    //     instance.closeMenu();
-    //   } else if (instance.openDirection !== 'auto') {
-    //     instance.menu.placement = directionMap[instance.openDirection];
-    //   } else if (hasEnoughSpaceBelow || !hasEnoughSpaceAbove) {
-    //     instance.menu.placement = 'bottom';
-    //   } else {
-    //     instance.menu.placement = 'top';
-    //   }
-    // },
-    // setupMenuSizeWatcher: function setupMenuSizeWatcher() {
-    //   var instance = this.instance;
-    //   var $menu = instance.getMenu();
-    //   if (this.menuSizeWatcher) return;
-    //   this.menuSizeWatcher = {
-    //     remove: watchSize($menu, this.adjustMenuOpenDirection)
-    //   };
-    // },
-    // setupMenuResizeAndScrollEventListeners: function setupMenuResizeAndScrollEventListeners() {
-    //   var instance = this.instance;
-    //   var $control = instance.getControl();
-    //   if (this.menuResizeAndScrollEventListeners) return;
-    //   this.menuResizeAndScrollEventListeners = {
-    //     remove: setupResizeAndScrollEventListeners($control, this.adjustMenuOpenDirection)
-    //   };
-    // },
     removeMenuSizeWatcher: function removeMenuSizeWatcher() {
       if (!this.menuSizeWatcher) return;
       this.menuSizeWatcher.remove();
@@ -4819,8 +4597,8 @@ var directionMap = {
     }, [this.renderMenu()])]);
   }
 });
-// CONCATENATED MODULE: ./src/components/Menu.vue?vue&type=script&lang=js&
- /* harmony default export */ var components_Menuvue_type_script_lang_js_ = (Menuvue_type_script_lang_js_); 
+// CONCATENATED MODULE: ./src/components/Menu.vue?vue&type=script&lang=js
+ /* harmony default export */ var components_Menuvue_type_script_lang_js = (Menuvue_type_script_lang_js); 
 // CONCATENATED MODULE: ./src/components/Menu.vue
 var Menu_render, Menu_staticRenderFns
 
@@ -4830,7 +4608,7 @@ var Menu_render, Menu_staticRenderFns
 /* normalize component */
 
 var Menu_component = normalizeComponent(
-  components_Menuvue_type_script_lang_js_,
+  components_Menuvue_type_script_lang_js,
   Menu_render,
   Menu_staticRenderFns,
   false,
@@ -4845,16 +4623,13 @@ if (false) { var Menu_api; }
 Menu_component.options.__file = "src/components/Menu.vue"
 /* harmony default export */ var Menu = (Menu_component.exports);
 // EXTERNAL MODULE: external "Vue"
-var external_Vue_ = __webpack_require__(36);
+var external_Vue_ = __webpack_require__(40);
 var external_Vue_default = /*#__PURE__*/__webpack_require__.n(external_Vue_);
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader/lib??vue-loader-options!./src/components/MenuPortal.vue?vue&type=script&lang=js&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader/lib??vue-loader-options!./src/components/MenuPortal.vue?vue&type=script&lang=js
 
-
-function MenuPortalvue_type_script_lang_js_ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
-
-function MenuPortalvue_type_script_lang_js_objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { MenuPortalvue_type_script_lang_js_ownKeys(Object(source), true).forEach(function (key) { defineProperty_default()(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { MenuPortalvue_type_script_lang_js_ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
-
+function MenuPortalvue_type_script_lang_js_ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
+function MenuPortalvue_type_script_lang_js_objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? MenuPortalvue_type_script_lang_js_ownKeys(Object(t), !0).forEach(function (r) { defineProperty_default()(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : MenuPortalvue_type_script_lang_js_ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
 
 
 
@@ -4902,14 +4677,12 @@ var PortalTarget = {
     },
     setupControlSizeWatcher: function setupControlSizeWatcher() {
       var _this = this;
-
       var instance = this.instance;
       var $control = instance.getControl();
       if (this.controlSizeWatcher) return;
       this.controlSizeWatcher = {
         remove: watchSize($control, function () {
           _this.updateWidth();
-
           _this.updateMenuContainerOffset();
         })
       };
@@ -4970,7 +4743,7 @@ var PortalTarget = {
   }
 };
 var placeholder;
-/* harmony default export */ var MenuPortalvue_type_script_lang_js_ = ({
+/* harmony default export */ var MenuPortalvue_type_script_lang_js = ({
   name: 'vue-treeselect--menu-portal',
   created: function created() {
     this.portalTarget = null;
@@ -5005,8 +4778,8 @@ var placeholder;
     return placeholder;
   }
 });
-// CONCATENATED MODULE: ./src/components/MenuPortal.vue?vue&type=script&lang=js&
- /* harmony default export */ var components_MenuPortalvue_type_script_lang_js_ = (MenuPortalvue_type_script_lang_js_); 
+// CONCATENATED MODULE: ./src/components/MenuPortal.vue?vue&type=script&lang=js
+ /* harmony default export */ var components_MenuPortalvue_type_script_lang_js = (MenuPortalvue_type_script_lang_js); 
 // CONCATENATED MODULE: ./src/components/MenuPortal.vue
 var MenuPortal_render, MenuPortal_staticRenderFns
 
@@ -5016,7 +4789,7 @@ var MenuPortal_render, MenuPortal_staticRenderFns
 /* normalize component */
 
 var MenuPortal_component = normalizeComponent(
-  components_MenuPortalvue_type_script_lang_js_,
+  components_MenuPortalvue_type_script_lang_js,
   MenuPortal_render,
   MenuPortal_staticRenderFns,
   false,
@@ -5030,13 +4803,66 @@ var MenuPortal_component = normalizeComponent(
 if (false) { var MenuPortal_api; }
 MenuPortal_component.options.__file = "src/components/MenuPortal.vue"
 /* harmony default export */ var MenuPortal = (MenuPortal_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader/lib??vue-loader-options!./src/components/Treeselect.vue?vue&type=script&lang=js&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader/lib??vue-loader-options!./src/components/LabelShrink.vue?vue&type=script&lang=js
+/* harmony default export */ var LabelShrinkvue_type_script_lang_js = ({
+  name: 'vue-treeselect--label-shrink',
+  inject: ['instance'],
+  computed: {
+    shouldShrink: function shouldShrink() {
+      var instance = this.instance;
+      return instance.hasValue || instance.trigger.isFocused || instance.menu.isOpen;
+    }
+  },
+  methods: {
+    renderLabel: function renderLabel() {
+      var h = this.$createElement;
+      var instance = this.instance;
+      var shrinkClass = this.shouldShrink ? 'vue-treeselect--label-shrink--shrink' : '';
+      var label = this.shouldShrink ? instance.label : '';
+      if (!label) return null;
+      return h("label", {
+        "class": "vue-treeselect--label-shrink ".concat(shrinkClass)
+      }, [label]);
+    }
+  },
+  render: function render() {
+    var h = arguments[0];
+    return h("div", [this.renderLabel()]);
+  }
+});
+// CONCATENATED MODULE: ./src/components/LabelShrink.vue?vue&type=script&lang=js
+ /* harmony default export */ var components_LabelShrinkvue_type_script_lang_js = (LabelShrinkvue_type_script_lang_js); 
+// CONCATENATED MODULE: ./src/components/LabelShrink.vue
+var LabelShrink_render, LabelShrink_staticRenderFns
+
+
+
+
+/* normalize component */
+
+var LabelShrink_component = normalizeComponent(
+  components_LabelShrinkvue_type_script_lang_js,
+  LabelShrink_render,
+  LabelShrink_staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var LabelShrink_api; }
+LabelShrink_component.options.__file = "src/components/LabelShrink.vue"
+/* harmony default export */ var LabelShrink = (LabelShrink_component.exports);
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader/lib??vue-loader-options!./src/components/Treeselect.vue?vue&type=script&lang=js
 
 
 
 
 
-/* harmony default export */ var Treeselectvue_type_script_lang_js_ = ({
+
+/* harmony default export */ var Treeselectvue_type_script_lang_js = ({
   name: 'vue-treeselect',
   mixins: [treeselectMixin],
   computed: {
@@ -5053,7 +4879,8 @@ MenuPortal_component.options.__file = "src/components/MenuPortal.vue"
         'vue-treeselect--open-above': this.menu.placement === 'top',
         'vue-treeselect--open-below': this.menu.placement === 'bottom',
         'vue-treeselect--branch-nodes-disabled': this.disableBranchNodes,
-        'vue-treeselect--append-to-body': this.appendToBody
+        'vue-treeselect--append-to-body': this.appendToBody,
+        'vue-treeselect--label-shrink': this.label && (this.hasValue || this.trigger.isFocused || this.menu.isOpen)
       };
     }
   },
@@ -5062,7 +4889,9 @@ MenuPortal_component.options.__file = "src/components/MenuPortal.vue"
     return h("div", {
       ref: "wrapper",
       "class": this.wrapperClass
-    }, [h(HiddenFields), h(Control, {
+    }, [h(LabelShrink, {
+      ref: "label-shrink"
+    }), h(HiddenFields), h(Control, {
       ref: "control"
     }), this.appendToBody ? h(MenuPortal, {
       ref: "portal"
@@ -5071,8 +4900,8 @@ MenuPortal_component.options.__file = "src/components/MenuPortal.vue"
     })]);
   }
 });
-// CONCATENATED MODULE: ./src/components/Treeselect.vue?vue&type=script&lang=js&
- /* harmony default export */ var components_Treeselectvue_type_script_lang_js_ = (Treeselectvue_type_script_lang_js_); 
+// CONCATENATED MODULE: ./src/components/Treeselect.vue?vue&type=script&lang=js
+ /* harmony default export */ var components_Treeselectvue_type_script_lang_js = (Treeselectvue_type_script_lang_js); 
 // CONCATENATED MODULE: ./src/components/Treeselect.vue
 var Treeselect_render, Treeselect_staticRenderFns
 
@@ -5082,7 +4911,7 @@ var Treeselect_render, Treeselect_staticRenderFns
 /* normalize component */
 
 var Treeselect_component = normalizeComponent(
-  components_Treeselectvue_type_script_lang_js_,
+  components_Treeselectvue_type_script_lang_js,
   Treeselect_render,
   Treeselect_staticRenderFns,
   false,
@@ -5097,7 +4926,7 @@ if (false) { var Treeselect_api; }
 Treeselect_component.options.__file = "src/components/Treeselect.vue"
 /* harmony default export */ var Treeselect = (Treeselect_component.exports);
 // EXTERNAL MODULE: ./src/style.less
-var style = __webpack_require__(37);
+var style = __webpack_require__(41);
 
 // CONCATENATED MODULE: ./src/index.js
 

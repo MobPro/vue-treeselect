@@ -1,15 +1,6 @@
 <script>
-  import { MENU_BUFFER } from '../constants'
-  import { watchSize, setupResizeAndScrollEventListeners } from '../utils'
   import Option from './Option'
   import Tip from './Tip'
-
-  const directionMap = {
-    top: 'top',
-    bottom: 'bottom',
-    above: 'top',
-    below: 'bottom',
-  }
 
   export default {
     name: 'vue-treeselect--menu',
@@ -221,68 +212,12 @@
       },
 
       onMenuOpen() {
-        this.adjustMenuOpenDirection()
-        this.setupMenuSizeWatcher()
-        this.setupMenuResizeAndScrollEventListeners()
+        return true
       },
 
       onMenuClose() {
         this.removeMenuSizeWatcher()
         this.removeMenuResizeAndScrollEventListeners()
-      },
-
-      adjustMenuOpenDirection() {
-        const { instance } = this
-        if (!instance.menu.isOpen) return
-
-        const $menu = instance.getMenu()
-        const $control = instance.getControl()
-        const menuRect = $menu.getBoundingClientRect()
-        const controlRect = $control.getBoundingClientRect()
-        const menuHeight = menuRect.height
-        const viewportHeight = window.innerHeight
-        const spaceAbove = controlRect.top
-        const spaceBelow = window.innerHeight - controlRect.bottom
-        const isControlInViewport = (
-          (controlRect.top >= 0 && controlRect.top <= viewportHeight) ||
-          (controlRect.top < 0 && controlRect.bottom > 0)
-        )
-        const hasEnoughSpaceBelow = spaceBelow > menuHeight + MENU_BUFFER
-        const hasEnoughSpaceAbove = spaceAbove > menuHeight + MENU_BUFFER
-
-        if (!isControlInViewport) {
-          instance.closeMenu()
-        } else if (instance.openDirection !== 'auto') {
-          instance.menu.placement = directionMap[instance.openDirection]
-        } else if (hasEnoughSpaceBelow || !hasEnoughSpaceAbove) {
-          instance.menu.placement = 'bottom'
-        } else {
-          instance.menu.placement = 'top'
-        }
-      },
-
-      setupMenuSizeWatcher() {
-        const { instance } = this
-        const $menu = instance.getMenu()
-
-        // istanbul ignore next
-        if (this.menuSizeWatcher) return
-
-        this.menuSizeWatcher = {
-          remove: watchSize($menu, this.adjustMenuOpenDirection),
-        }
-      },
-
-      setupMenuResizeAndScrollEventListeners() {
-        const { instance } = this
-        const $control = instance.getControl()
-
-        // istanbul ignore next
-        if (this.menuResizeAndScrollEventListeners) return
-
-        this.menuResizeAndScrollEventListeners = {
-          remove: setupResizeAndScrollEventListeners($control, this.adjustMenuOpenDirection),
-        }
       },
 
       removeMenuSizeWatcher() {

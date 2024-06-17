@@ -1,5 +1,5 @@
 /*!
- * vue-treeselect v0.4.0 | (c) 2017-2021 Riophae Lee
+ * vue-treeselect v0.4.0 | (c) 2017-2024 Riophae Lee
  * Released under the MIT License.
  * https://vue-treeselect.js.org/
  */
@@ -946,6 +946,26 @@
   border: 0;
   overflow: visible;
   box-sizing: border-box;
+}
+/**
+ * LabelShrinking
+ */
+.vue-treeselect--label-shrink .vue-treeselect__control {
+  padding: 2px 0.5rem;
+}
+label.vue-treeselect--label-shrink {
+  position: absolute;
+  transition: all 0.2s ease;
+  pointer-events: none;
+}
+label.vue-treeselect--label-shrink--shrink {
+  top: -0.375rem;
+  left: 0.25rem;
+  font-size: 0.75rem;
+  z-index: 1;
+  line-height: 0.75rem;
+  background-color: #fff;
+  padding: 0 0.25rem;
 }
 
 

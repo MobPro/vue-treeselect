@@ -4,6 +4,7 @@
   import Control from './Control'
   import Menu from './Menu'
   import MenuPortal from './MenuPortal'
+  import LabelShrink from './LabelShrink'
 
   export default {
     name: 'vue-treeselect',
@@ -24,6 +25,7 @@
           'vue-treeselect--open-below': this.menu.placement === 'bottom',
           'vue-treeselect--branch-nodes-disabled': this.disableBranchNodes,
           'vue-treeselect--append-to-body': this.appendToBody,
+          'vue-treeselect--label-shrink': this.label && (this.hasValue || this.trigger.isFocused || this.menu.isOpen),
         }
       },
     },
@@ -31,6 +33,7 @@
     render() {
       return (
         <div ref="wrapper" class={this.wrapperClass}>
+          <LabelShrink ref="label-shrink" />
           <HiddenFields />
           <Control ref="control" />
           {this.appendToBody ? <MenuPortal ref="portal" /> : <Menu ref="menu" />}
